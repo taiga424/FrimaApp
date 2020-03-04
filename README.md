@@ -56,7 +56,7 @@ Things you may want to cover:
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
+|name|string|null: false|
 |description|text|null: false|
 |price|integer|null: false|
 |image|string|null: false|
