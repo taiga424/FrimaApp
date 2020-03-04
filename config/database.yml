@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
+  password: otuya351227
   socket: /tmp/mysql.sock
 
 development:
@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: FrimaApp_production
-  username: FrimaApp
+  username: root
   password: <%= ENV['FRIMAAPP_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
