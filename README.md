@@ -35,15 +35,23 @@ Things you may want to cover:
 |furigana_last|string|null: false|
 |birthdate|date|null: false|
 |postal_code|integer|null: false|
-|prefecture|integer|null: false|
-|city|string|null: false|
-|number|string|null: false|
-|building|string|
 |tel|integer|
 
 ### Association
 - has_many :items
+- has_one :address
 
+
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|prefecture|integer|null: false|
+|city|string|null: false|
+|number|string|null: false|
+|building|string|
+
+### Association
+- belongs_to :user
 
 ## itemsテーブル
 |Column|Type|Options|
