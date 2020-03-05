@@ -1,0 +1,163 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.show {
+  background-color: #f8f8f8;
+  &__main {
+    padding: 40px;
+    .content {
+      width: 700px;
+      margin: 0 auto;
+      &__top {
+        .item {
+          background-color: #fff;
+          padding: 25px 40px 40px;
+          &__name {
+            text-align: center;
+            font-weight: bold;
+            font-size: 25px;
+          }
+          &__img {
+            margin-top: 16px;
+            &__list {
+              &__top {
+                display: flex;
+                flex-direction: column;
+                width: 560px;
+                margin: auto;
+                .img {
+                  object-fit: cover;
+                  height: 350px;
+                }
+                .bottom {
+                  display: flex;
+                  justify-content: center;
+                  margin-top: 8px;
+                  li {
+                    margin-right: 8px;
+                    width: 15%;
+                    .img {
+                      object-fit: cover;
+                      height: 90px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &__price {
+            margin: 24px 0 ;
+            text-align: center;
+            span {
+              font-size: 50px;
+              font-weight: bold;
+              margin: 8px;
+            }
+            &-tax {
+              span {
+                font-size: 20px;
+                font-weight: normal;
+              }
+            }
+          }
+          &__title {
+            margin-bottom: 32px;
+          }
+          table {
+            margin-bottom: 24px;
+            width: 100%;
+            height: 380px;
+            tbody {
+              tr {
+                th {
+                  width: 20%;
+                  background-color: #eee;
+                  padding: 8px;
+                  border: 1px solid #dedede;
+                  text-align: center;
+                }
+                td {
+                  width: 61%;
+                  padding: 15px;
+                  border: 1px solid #dedede;
+                }
+              }
+            }
+          }
+          .option {
+            display: flex;
+            justify-content: space-between;
+            &__like {
+              display: flex;
+              &-btn1 {
+                padding: 5px 10px;
+                border-radius: 40px;
+                color: #3CCACE;
+                border: 1px solid #ffb340;
+              }
+            }
+            &__report {
+              &-btn2 {
+                padding: 5px 10px;
+                border-radius: 5px;
+                color: #333;
+                border: 1px solid #333;
+              }
+            }
+          }
+        }
+        .commentBox {
+          padding: 24px;
+          background-color: #fff;
+          margin: 8px 0;
+          text-align: center;
+          .comment-new {
+            .comment-body {
+              width: 100%;
+              min-height: 104px;
+              padding: 8px;
+            }
+            p.caution {
+              padding: 8px;
+              margin: 8px;
+              font-size: 14px;
+              background-color: #f8f8f8;
+              text-align: left;
+            }
+            .comment-btn {
+              line-height: 50px;
+              background-color: #3ccace;
+              border: solid 1px #3ccace;
+              color: #fff;
+              width: 60%;
+              border-radius: 100px;
+            }
+          }
+        }
+      }
+      .switch {
+        display: flex;
+        justify-content: space-between;
+        &__before {
+          color: #3CCACE;
+        }
+        &__after {
+          color: #3CCACE;
+        }
+      }
+      .other {
+        margin: 24px 0 8px;
+        color: #3CCACE;
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+  }
+}
