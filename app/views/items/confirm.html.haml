@@ -1,0 +1,43 @@
+.confirm
+  .confirm__main
+    .content
+      .content__top
+        .item-wrapper
+          %h2.title
+            購入内容の確認
+          .item-info
+            .item-info__wrapper
+              = image_tag "a001.png", class:"img"
+              .item-info__wrapper__group
+                .item-info__wrapper__group__description
+                  product1
+                .item-info__wrapper__group__price
+                  %span 
+                    ¥10000
+                  %span 
+                    (税込)
+                  %span 
+                    送料込み
+          .buy-info
+            %h2.buy-info__title
+              支払い金額
+            .buy-info__price
+              ¥10000
+          .buy-method
+            %h3.buy-method__title
+              支払い方法
+            .register-link
+              = link_to "＋登録してください", '#'
+          .send-address
+            %h3.send-address__title
+              配送先
+            .register-link
+              = link_to "＋登録してください", '#'
+          .buy-action
+            %p.buy-btn
+              購入する！
+          %p.app-invitation
+            アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
+          .app-link-group
+            %img{src: "https://pcweb-assets.mercdn.net/assets/img/common/common/app-store.svg?580978326"}
+            %img{src: "https://pcweb-assets.mercdn.net/assets/img/common/common/google-play.svg?580978326"}
