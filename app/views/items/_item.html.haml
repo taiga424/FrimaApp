@@ -1,13 +1,13 @@
 .contents__categories__itemBox__itemLists__itemList
-  %a{href: "#"}
+  = link_to "#" do
     .itemList--image 
       -if item.buyer.present?
-        %img{ src: "#{item.image}" }
+        = image_tag "#{item.image}"
       -else 
-        %img{ src: "#{item.image}" }
-          .itemList--image__sold
-            .itemList--image__sold__text
-              SOLD
+        = image_tag "#{item.image}" 
+        .itemList--image__sold
+          .itemList--image__sold__text
+            SOLD
     .itemList--body
       %h3.itemList--body__name
         = item.name

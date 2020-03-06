@@ -34,11 +34,8 @@
         %br
         フリマアプリです
       .contents__topVisual__content__btn
-        %a{href: "#"}
-          %img{ src: "http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"}
-        %a{href: "#"}
-          %img{ src: "http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"}
-
+        = link_to image_tag("http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"), "#" 
+        = link_to image_tag("http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"), "#" 
   .contents__topIntroduction
     %h2.contents__topIntroduction__title
       FURIMAが選ばれる3つの理由
@@ -85,10 +82,8 @@
           %br
             ほしかったあの商品に出会えるかもしれません。
       .contents__middleVisual__content__btn
-        %a{href: "#"}
-          %img{ src: "http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"}
-        %a{href: "#"}
-          %img{ src: "http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"}
+        = link_to image_tag("http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"), "#" 
+        = link_to image_tag("http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"), "#"
 
   .contents__muddleIntroduction
     %h2.contents__muddleIntroduction__head
@@ -124,7 +119,7 @@
       ピックアップカテゴリー
     .contents__categories__itemBox
       .contents__categories__itemBox__itemHead
-        %a{href: "#"}
+        = link_to "#" do
           %h3.title
             新規投稿商品
       .contents__categories__itemBox__itemLists
@@ -136,7 +131,7 @@
       ピックアップブランド
     .contents__categories__itemBox
       .contents__categories__itemBox__itemHead
-        %a{href: "#"}
+        = link_to "#" do
           %h3.title
             アーカイバ         
       .contents__categories__itemBox__itemLists
@@ -150,10 +145,8 @@
     %p.bottomVisual__content__text
       今すぐ無料ダウンロード！
     .bottomVisual__content__icon
-      %a{href: "#"}
-        %img{ src: "http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"}
-      %a{href: "#"}
-        %img{ src: "http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"}
+      = link_to image_tag("http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"), "#" 
+      = link_to image_tag("http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"), "#"
 
 .footer
   %ul.footer__contents

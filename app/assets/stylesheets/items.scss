@@ -329,26 +329,45 @@
                 width: 100%;
                 height: 150px;
                 z-index: auto;
-                object-fit: cover;
+                object-fit: cover;         
+              }
+              &__sold {
+                width: 0;
+                height: 0;
+                position: absolute;
+                top: 0;
+                border-top: 50px solid red ;
+                border-right: 50px solid transparent;
+                border-bottom: 50px solid transparent;
+                border-left: 50px solid red ;
+                &__text {
+                  transform: rotate(-45deg);
+                  font-size: 20px;
+                  color: #fff;
+                  letter-spacing: 2px;
+                  font-weight: bold;
+                  margin-left: -50px;
+                  margin-top: -30px;
                 }
-                &__sold {
-                  width: 0;
-                  height: 0;
-                  position: absolute;
-                  top: 0;
-                  border-top: 50px solid red ;
-                  border-right: 50px solid transparent;
-                  border-bottom: 50px solid transparent;
-                  border-left: 50px solid red ;
-                  &__text {
-                    transform: rotate(-45deg);
-                    font-size: 20px;
-                    color: #fff;
-                    letter-spacing: 2px;
-                    font-weight: bold;
-                    margin-left: -50px;
-                    margin-top: -30px;
-                  }
+              }
+            }
+            &__sold {
+              width: 0;
+              height: 0;
+              position: absolute;
+              top: 0;
+              border-top: 50px solid red ;
+              border-right: 50px solid transparent;
+              border-bottom: 50px solid transparent;
+              border-left: 50px solid red ;
+              &__text {
+                transform: rotate(-45deg);
+                font-size: 20px;
+                color: #fff;
+                letter-spacing: 2px;
+                font-weight: bold;
+                margin-left: -50px;
+                margin-top: -30px;
               }
             }
             .itemList--body {
@@ -372,7 +391,7 @@
             }
           }
         }
-        .itemList:hover {
+        &__itemList:hover {
           opacity: 0.5;
         }
       }
