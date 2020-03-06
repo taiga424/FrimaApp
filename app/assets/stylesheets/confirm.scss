@@ -1,0 +1,105 @@
+* {
+  // font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a:link, a:visited, a:hover, a:active {
+  color: #0099e8;
+}
+.confirm {
+  background-color: #f8f8f8;
+  &__main {
+    padding: 40px;
+    .content {
+      width: 700px;
+      margin: 0 auto;
+      &__top {
+        .item-wrapper {
+          background-color: #fff;
+          .title{
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            border-bottom: 1px solid #efefef;
+            padding: 30px 0;
+          }
+          .item-info{
+            border-bottom: 1px solid #efefef;
+            padding: 30px 0;
+            &__wrapper{
+              display: flex;
+              justify-content: center;
+              .img {
+                  object-fit: cover;
+                  height: 100px;
+                  width: 100px;
+                  border: 1px solid;
+              }
+              &__group{
+                padding-left: 15px;
+                &__description {
+                  font-size: 20px;
+                  margin-bottom: 8px;
+                }
+                &__price {
+                  span {
+                    font-size: 20px;
+                  }
+                  &-tax {
+                    span {
+                      font-size: 20px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .buy-info{
+            display: flex;
+            justify-content: space-between;
+            width: 320px;
+            font-size: 24px;
+            margin: 0 auto;
+            border-bottom: 1px solid #efefef;
+            padding: 30px 0;
+            &__price{
+              font-weight: bold;
+            }
+          }
+          .buy-method{
+            width: 320px;
+            margin: 0 auto;
+            border-bottom: 1px solid #efefef;
+            padding: 30px 0;
+          }
+          .send-address{
+            width: 320px;
+            margin: 0 auto;
+            border-bottom: 1px solid #efefef;
+            padding: 30px 0;
+          }
+          .buy-action{
+            width: 320px;
+            text-align: center;
+            padding: 30px 0;
+            margin:0 auto;
+            .buy-btn{
+              padding: 10px;
+              color: white;
+              background-color: #A4A4A4;
+            }
+          }
+          .app-invitation{
+            text-align: center;
+            margin-bottom: 24px;
+          }
+          .app-link-group{
+            text-align: center;
+            padding-bottom: 24px;
+          }
+        }
+      }
+    }
+  }
+}
