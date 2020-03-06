@@ -1,5 +1,7 @@
+$gray: #efefef;
+$content-padding: 30px 0;
+$content-width: 320px;
 * {
-  // font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -21,12 +23,12 @@ a:link, a:visited, a:hover, a:active {
             text-align: center;
             font-weight: bold;
             font-size: 30px;
-            border-bottom: 1px solid #efefef;
-            padding: 30px 0;
+            border-bottom: 1px solid $gray;
+            padding: $content-padding;
           }
           .item-info{
-            border-bottom: 1px solid #efefef;
-            padding: 30px 0;
+            border-bottom: 1px solid $gray;
+            padding: $content-padding;
             &__wrapper{
               display: flex;
               justify-content: center;
@@ -58,31 +60,31 @@ a:link, a:visited, a:hover, a:active {
           .buy-info{
             display: flex;
             justify-content: space-between;
-            width: 320px;
+            width: $content-width;
             font-size: 24px;
             margin: 0 auto;
-            border-bottom: 1px solid #efefef;
-            padding: 30px 0;
+            border-bottom: 1px solid $gray;
+            padding: $content-padding;
             &__price{
               font-weight: bold;
             }
           }
           .buy-method{
-            width: 320px;
+            width: $content-width;
             margin: 0 auto;
-            border-bottom: 1px solid #efefef;
-            padding: 30px 0;
+            border-bottom: 1px solid $gray;
+            padding: $content-padding;
           }
           .send-address{
-            width: 320px;
+            width: $content-width;
             margin: 0 auto;
-            border-bottom: 1px solid #efefef;
-            padding: 30px 0;
+            border-bottom: 1px solid $gray;
+            padding: $content-padding;
           }
           .buy-action{
-            width: 320px;
+            width: $content-width;
             text-align: center;
-            padding: 30px 0;
+            padding: $content-padding;
             margin:0 auto;
             .buy-btn{
               padding: 10px;
