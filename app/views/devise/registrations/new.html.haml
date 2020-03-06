@@ -1,0 +1,73 @@
+.single-container
+  .single-container__single-header
+    .single-container__single-header__header-logo
+      = image_tag src= "/assets/logo.png", size: "200x80"
+  .single-container__single-main
+    .single-container__single-main__l-single-container
+      .single-container__single-main__l-single-container__l-single-head-registration
+        新規会員登録
+      .single-container__single-main__l-single-container__l-single-head-registration-form
+        .single-container__single-main__l-single-container__l-single-head-registration-form__l-single-content
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = render "devise/shared/error_messages", resource: resource
+            .field
+              = f.label :ニックネーム, class:'label-weight'
+              %span.need
+                必須
+              %br/
+              = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "imput-box"
+            .field
+              = f.label :email, class:'label-weight'
+              %span.need
+                必須
+              %br/
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "imput-box"
+            .field
+              = f.label :パスワード, class:'label-weight'
+              - if @minimum_password_length
+                %em
+                  (#{@minimum_password_length} 文字以上)
+                  %span.need
+                    必須
+              %br/
+              = f.password_field :password, autocomplete: "new-password", class: "imput-box"
+            .field
+              = f.label :パスワード（確認）, class:'label-weight', class:'label-weight'
+              %span.need
+                必須
+              %br/
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: "imput-box"
+              .confirm
+                ※本人確認
+                .confirm__sentence
+                  安心・安全にご利用いただくために、お客さまの本人情報の登録
+                  %br/
+                  にご協力ください。他のお客さまに公開されることはありません。
+            .field
+              = f.label :お名前（全角）, class:'label-weight'
+              %span.need
+                必須
+              %br/
+              = f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: '(例)山田', class: "imput-box"
+              %br/
+              = f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: '(例)太郎', class: "imput-box"
+            .field
+              = f.label :お名前（フリガナ）, class:'label-weight'
+              %span.need
+                必須
+              %br/
+              = f.text_field :furigana_last, autofocus: true, autocomplete: "furigana_last", placeholder: '(例)ヤマダ', class: "imput-box"
+              %br/
+              = f.text_field :furigana_first, autofocus: true, autocomplete: "furigana_first", placeholder: '(例)タロウ', class: "imput-box"
+            .field
+              = f.label :生年月日, class:'label-weight'
+              %span.need
+                必須
+              %br/
+              = f.date_select :birthdate, autocomplete: "birthdate"
+            .actions
+              = f.submit "新規登録",class: 'submit-form'
+
+          = render "devise/shared/links"
+  .single-container__single-footer
+    = image_tag src= "/assets/logo-white.png", size: "100x40", class: 'footer-logo'
