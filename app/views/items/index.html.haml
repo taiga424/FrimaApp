@@ -9,7 +9,7 @@
           %input{ placeholder: "キーワードから探す"}
           %button{type: "submit"}
             .btnIcon
-              = image_tag "/icon-search 1.png"
+              = image_tag "icon-search 1.png"
 
     .header__headerBox__nav
       %ul.header__headerBox__nav__leftMenu
@@ -127,58 +127,10 @@
         %a{href: "#"}
           %h3.title
             新規投稿商品
-
       .contents__categories__itemBox__itemLists
-        .contents__categories__itemBox__itemLists__itemList
-          %a{href: "#"}
-            .itemList--image 
-              = image_tag "member_photo_noimage_thumb.png"
-            .itemList--body
-              %h3.itemList--body__name
-                product3
-              .itemList--body__details
-                %ul
-                  %li
-                    30000円
-                  %li
-                    = icon('fas', 'star')
-                    0
-                %p
-                  (税込)
-        .contents__categories__itemBox__itemLists__itemList
-          %a{href: "#"}
-            .itemList--image 
-              = image_tag "member_photo_noimage_thumb.png"
-            .itemList--body
-              %h3.itemList--body__name
-                product2
-              .itemList--body__details
-                %ul
-                  %li
-                    20000円
-                  %li
-                    = icon('fas', 'star')
-                    0
-                %p
-                  (税込)
-        .contents__categories__itemBox__itemLists__itemList
-          %a{href: "#"}
-            .itemList--image 
-              = image_tag "member_photo_noimage_thumb.png"
-            .itemList--body
-              %h3.itemList--body__name
-                product1
-              .itemList--body__details
-                %ul
-                  %li
-                    10000円
-                  %li
-                    = icon('fas', 'star')
-                    0
-                %p
-                  (税込)
-
-
+        - @items.each do |item|
+          = render partial: "item", locals: { item: item }
+        
   .contents__categories
     %h2.contents__categories__head
       ピックアップブランド
@@ -186,57 +138,11 @@
       .contents__categories__itemBox__itemHead
         %a{href: "#"}
           %h3.title
-            アーカイバ
-
+            アーカイバ         
       .contents__categories__itemBox__itemLists
-        .contents__categories__itemBox__itemLists__itemList
-          %a{href: "#"}
-            .itemList--image 
-              = image_tag "member_photo_noimage_thumb.png"
-            .itemList--body
-              %h3.itemList--body__name
-                product3
-              .itemList--body__details
-                %ul
-                  %li
-                    30000円
-                  %li
-                    = icon('fas', 'star')
-                    0
-                %p
-                  (税込)
-        .contents__categories__itemBox__itemLists__itemList
-          %a{href: "#"}
-            .itemList--image 
-              = image_tag "member_photo_noimage_thumb.png"
-            .itemList--body
-              %h3.itemList--body__name
-                product2
-              .itemList--body__details
-                %ul
-                  %li
-                    20000円
-                  %li
-                    = icon('fas', 'star')
-                    0
-                %p
-                  (税込)
-        .contents__categories__itemBox__itemLists__itemList
-          %a{href: "#"}
-            .itemList--image 
-              = image_tag "member_photo_noimage_thumb.png"
-            .itemList--body
-              %h3.itemList--body__name
-                product1
-              .itemList--body__details
-                %ul
-                  %li
-                    10000円
-                  %li
-                    = icon('fas', 'star')
-                    0
-                %p
-                  (税込)
+        - @items.each do |item|
+          = render partial: "item", locals: { item: item }
+
 .bottomVisual
   .bottomVisual__content
     %h2.bottomVisual__content__title

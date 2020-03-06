@@ -1,0 +1,22 @@
+.contents__categories__itemBox__itemLists__itemList
+  %a{href: "#"}
+    .itemList--image 
+      -if item.buyer.present?
+        %img{ src: "#{item.image}" }
+      -else 
+        %img{ src: "#{item.image}" }
+          .itemList--image__sold
+            .itemList--image__sold__text
+              SOLD
+    .itemList--body
+      %h3.itemList--body__name
+        = item.name
+      .itemList--body__details
+        %ul
+          %li
+            = item.price
+          %li
+            = icon('fas', 'star')
+            0
+        %p
+          (税込)
