@@ -9,7 +9,7 @@
           %input{ placeholder: "キーワードから探す"}
           %button{type: "submit"}
             .btnIcon
-              = image_tag "/icon-search 1.png"
+              = image_tag "icon-search 1.png"
 
     .header__headerBox__nav
       %ul.header__headerBox__nav__leftMenu
@@ -34,11 +34,8 @@
         %br
         フリマアプリです
       .contents__topVisual__content__btn
-        %a{href: "#"}
-          %img{ src: "http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"}
-        %a{href: "#"}
-          %img{ src: "http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"}
-
+        = link_to image_tag("http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"), "#" 
+        = link_to image_tag("http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"), "#" 
   .contents__topIntroduction
     %h2.contents__topIntroduction__title
       FURIMAが選ばれる3つの理由
@@ -85,10 +82,8 @@
           %br
             ほしかったあの商品に出会えるかもしれません。
       .contents__middleVisual__content__btn
-        %a{href: "#"}
-          %img{ src: "http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"}
-        %a{href: "#"}
-          %img{ src: "http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"}
+        = link_to image_tag("http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"), "#" 
+        = link_to image_tag("http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"), "#"
 
   .contents__muddleIntroduction
     %h2.contents__muddleIntroduction__head
@@ -124,119 +119,25 @@
       ピックアップカテゴリー
     .contents__categories__itemBox
       .contents__categories__itemBox__itemHead
-        %a{href: "#"}
+        = link_to "#" do
           %h3.title
             新規投稿商品
-
       .contents__categories__itemBox__itemLists
-        .contents__categories__itemBox__itemLists__itemList
-          %a{href: "#"}
-            .itemList--image 
-              = image_tag "member_photo_noimage_thumb.png"
-            .itemList--body
-              %h3.itemList--body__name
-                product3
-              .itemList--body__details
-                %ul
-                  %li
-                    30000円
-                  %li
-                    = icon('fas', 'star')
-                    0
-                %p
-                  (税込)
-        .contents__categories__itemBox__itemLists__itemList
-          %a{href: "#"}
-            .itemList--image 
-              = image_tag "member_photo_noimage_thumb.png"
-            .itemList--body
-              %h3.itemList--body__name
-                product2
-              .itemList--body__details
-                %ul
-                  %li
-                    20000円
-                  %li
-                    = icon('fas', 'star')
-                    0
-                %p
-                  (税込)
-        .contents__categories__itemBox__itemLists__itemList
-          %a{href: "#"}
-            .itemList--image 
-              = image_tag "member_photo_noimage_thumb.png"
-            .itemList--body
-              %h3.itemList--body__name
-                product1
-              .itemList--body__details
-                %ul
-                  %li
-                    10000円
-                  %li
-                    = icon('fas', 'star')
-                    0
-                %p
-                  (税込)
-
-
+        - @items.each do |item|
+          = render partial: "item", locals: { item: item }
+        
   .contents__categories
     %h2.contents__categories__head
       ピックアップブランド
     .contents__categories__itemBox
       .contents__categories__itemBox__itemHead
-        %a{href: "#"}
+        = link_to "#" do
           %h3.title
-            アーカイバ
-
+            アーカイバ         
       .contents__categories__itemBox__itemLists
-        .contents__categories__itemBox__itemLists__itemList
-          %a{href: "#"}
-            .itemList--image 
-              = image_tag "member_photo_noimage_thumb.png"
-            .itemList--body
-              %h3.itemList--body__name
-                product3
-              .itemList--body__details
-                %ul
-                  %li
-                    30000円
-                  %li
-                    = icon('fas', 'star')
-                    0
-                %p
-                  (税込)
-        .contents__categories__itemBox__itemLists__itemList
-          %a{href: "#"}
-            .itemList--image 
-              = image_tag "member_photo_noimage_thumb.png"
-            .itemList--body
-              %h3.itemList--body__name
-                product2
-              .itemList--body__details
-                %ul
-                  %li
-                    20000円
-                  %li
-                    = icon('fas', 'star')
-                    0
-                %p
-                  (税込)
-        .contents__categories__itemBox__itemLists__itemList
-          %a{href: "#"}
-            .itemList--image 
-              = image_tag "member_photo_noimage_thumb.png"
-            .itemList--body
-              %h3.itemList--body__name
-                product1
-              .itemList--body__details
-                %ul
-                  %li
-                    10000円
-                  %li
-                    = icon('fas', 'star')
-                    0
-                %p
-                  (税込)
+        - @items.each do |item|
+          = render partial: "item", locals: { item: item }
+
 .bottomVisual
   .bottomVisual__content
     %h2.bottomVisual__content__title
@@ -244,10 +145,8 @@
     %p.bottomVisual__content__text
       今すぐ無料ダウンロード！
     .bottomVisual__content__icon
-      %a{href: "#"}
-        %img{ src: "http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"}
-      %a{href: "#"}
-        %img{ src: "http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"}
+      = link_to image_tag("http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg"), "#" 
+      = link_to image_tag("http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg"), "#"
 
 .footer
   %ul.footer__contents
