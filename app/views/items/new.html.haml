@@ -48,7 +48,7 @@
       .wrapper.image-wrapper
         - 10.times do
           = f.label :image, class: "image-wrapper__label" do
-            %img{src: "/assets/icon_camera.png", class: "image-wrapper__label__image"}
+            = image_tag "icon_camera.png", class: "image-wrapper__label__image"
             = f.file_field :image, class: "image-wrapper__label__file"
       .wrapper.name-wrapper
         %label.wrapper__label
