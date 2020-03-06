@@ -46,10 +46,14 @@
   .main-items
     = form_with model: @item, local:true do |f|
       .wrapper.image-wrapper
-        - 10.times do
-          = f.label :image, class: "image-wrapper__label" do
-            %img{src: "/assets/icon_camera.png", class: "image-wrapper__label__image"}
-            = f.file_field :image, class: "image-wrapper__label__file"
+        = f.fields_for :image, @item.images do |image|
+          = image.label :content, class: "image-wrapper__label" do
+            = image_tag '/assets/icon_camera.png', class: "image-wrapper__label__image"
+            = image.file_field :content, multiple: true, class: "image-wrapper__label__file"
+            = image.hidden_field :id, value: "1"
+            -# %img{src: "/assets/icon_camera.png", class: "image-wrapper__label__image"}
+            -# - 10.times do
+
       .wrapper.name-wrapper
         %label.wrapper__label
           商品名：
@@ -74,7 +78,8 @@
       .wrapper.brand-wrapper
         %label.wrapper__label
           ブランド：
-          = f.select :brand, [['テスト', 1], ['test', 2]], {include_blank: "指定なし"}, class: "brand-wrapper__brand form-control"
+          = f.collection_select :brand, Item.group(:brand).order(id: :desc), :brand, :brand, {prompt: ""}, class: "brand-wrapper__brand form-control"
+          
 
       .wrapper.condition-wrapper
         %label.wrapper__label
@@ -89,7 +94,7 @@
           配送料の負担：
           %span.required
             ※必須
-          = f.select :fee, [['送料込み（出品者が負担）', 1], ['着払い（購入者が負担）', 2]], { include_blank: true, selected: 1}, class: "fee-wrapper__fee form-control", required: "required"
+          = f.select :fee, [['送料込み（出品者が負担）', 1], ['着払い（購入者が負担）', 2]], {include_blank: true, selected: 1}, class: "fee-wrapper__fee form-control", required: "required"
       
       .wrapper.shipping_days-wrapper
         %label.wrapper__label
@@ -110,7 +115,7 @@
           価格：
           %span.required
             ※必須
-          = f.text_field :price, class: "price-wrapper__price form-control", required: "required"
+          = f.text_field :price, placeholder: "¥300 〜 ¥2,000,000 まで", class: "price-wrapper__price form-control", required: "required"
 
       .wrapper.submit-wrapper
         = f.submit "出品する", class: "btn submit-wrapper__submit-btn"
