@@ -67,7 +67,15 @@
               }
             }
           }
-          &__title {
+          &__purchase {
+            align-items: center;
+            color: white;
+            font-size: 30px;
+            background-color: red;
+            width: 100%;
+            height: 100px;
+          }
+          &__description {
             margin-bottom: 32px;
           }
           table {

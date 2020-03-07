@@ -74,14 +74,14 @@
       .wrapper.brand-wrapper
         %label.wrapper__label
           ブランド：
-          = f.select :brand, [['テスト', 1], ['test', 2]], {include_blank: "指定なし"}, class: "brand-wrapper__brand form-control"
-
+          = f.select :brand, @brands.pluck(:name), {include_blank: true, selected: 1}, class: "brand-wrapper__brand form-control"
+          
       .wrapper.condition-wrapper
         %label.wrapper__label
           商品の状態：
           %span.required
             ※必須
-          = f.select :condition, [["新品、未使用", 1], ['未使用に近い', 2], ['目立った傷や汚れなし', 3], ['やや傷や汚れあり', 4], ['傷や汚れあり', 5],  ['全体的に状態が悪い', 6]], {include_blank: true, selected: 1}, {class: "condition-wrapper__condition form-control", required: "required"}
+          = f.select :condition, Item.conditions.keys, {include_blank: true, selected: 1}, {class: "condition-wrapper__condition form-control", required: "required"}
       .form-separator
 
       .wrapper.fee-wrapper
@@ -89,20 +89,20 @@
           配送料の負担：
           %span.required
             ※必須
-          = f.select :fee, [['送料込み（出品者が負担）', 1], ['着払い（購入者が負担）', 2]], { include_blank: true, selected: 1}, class: "fee-wrapper__fee form-control", required: "required"
+          = f.select :fee, Item.fees.keys, { include_blank: true, selected: 1}, class: "fee-wrapper__fee form-control", required: "required"
       
       .wrapper.shipping_days-wrapper
         %label.wrapper__label
           発送日の目安：
           %span.required
             ※必須
-          = f.select :shipping_days, [['1〜2日後に発送', 1], ['2〜3日後に発送', 2], ['4〜7日後に発送', 3]], { include_blank: true, selected: 1 }, class: "shipping_days-wrapper__shipping-days form-control", required: "required"
+          = f.select :shipping_days, Item.shipping_days.keys, { include_blank: true, selected: 1 }, class: "shipping_days-wrapper__shipping-days form-control", required: "required"
       .wrapper.area-wrapper
         %label.wrapper__label
           発送元の地域：
           %span.required
             ※必須
-          = f.select :area, ApplicationRecord.prefectures.keys, { include_blank: true, selected: 1}, class: "area-wrapper__area form-control", required: "required"
+          = f.select :area, Item.prefectures.keys, { include_blank: true, selected: 1}, class: "area-wrapper__area form-control", required: "required"
       .form-separator
 
       .wrapper.price-wrapper

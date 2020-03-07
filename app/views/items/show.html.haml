@@ -4,28 +4,30 @@
       .content__top
         .item
           %h2.item__name 
-            product1
+            = @item.name
           .item__img
             %ul.item__img__list
               %li.item__img__list__top
-                = image_tag "a001.png", class:"img"
+                = image_tag @item.image, class:"img"
                 %ul.bottom
                   %li
-                    = image_tag "a001.png", class:"img"
+                    = image_tag @item.image, class:"img"
                   %li
-                    = image_tag "a002.png", class:"img"
+                    = image_tag @item.image, class:"img"
                   %li
-                    = image_tag "a003.png", class:"img"
-          .item__price
+                    = image_tag @item.image, class:"img"
+          .item__price 
             %span 
-              ¥10000
+              = @item.price 
+              円
             .item__price-tax
               %span 
                 (税込)
               %span 
                 送料込み
-          .item__title
-            product1
+          %button{type: "button", class:'item__purchase'}
+            購入画面に進む
+          .item__description= @item.description
           %table{:border => "1"}
             %tbody
               %tr 
@@ -41,23 +43,22 @@
                   Tシャツ/カットソー(半袖/袖なし)
               %tr
                 %th ブランド
-                %td
+                %td= @brand.name
               %tr
                 %th 商品のサイズ
                 %td
               %tr
                 %th 商品の状態
-                %td 新品/未使用
+                %td= @item.condition
               %tr
                 %th 配送料の負担
-                %td 送料込み(出品者負担)
+                %td= @item.fee
               %tr
                 %th 発送元の地域
-                %td
-                  青森県
+                %td= @area
               %tr
                 %th 発送日のめ目安
-                %td 1-2日で発送
+                %td= @shipping_day
           .option
             %ul.option__like
               %li.option__like-btn1
