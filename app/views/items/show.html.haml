@@ -5,39 +5,28 @@
       .content__top
         .item
           %h2.item__name 
-            = @item.name
+            product1
           .item__img
             %ul.item__img__list
               %li.item__img__list__top
-                = image_tag @images.first[:content], class:"img-top"
-                - if @images.length{[:content] >= 2 }
-                  %ul.bottom
-                    .bottom__list
-                      - @images.each do |images|
-                        %li
-                          = image_tag images[:content], class:"img-bottom"
-          .item__price 
+                = image_tag "a001.png", class:"img"
+                %ul.bottom
+                  %li
+                    = image_tag "a001.png", class:"img"
+                  %li
+                    = image_tag "a002.png", class:"img"
+                  %li
+                    = image_tag "a003.png", class:"img"
+          .item__price
             %span 
-              = @item.price 
-              円
+              ¥10000
             .item__price-tax
               %span 
                 (税込)
               %span 
                 送料込み
-          -if current_user.id == @item.user_id
-            =link_to edit_item_path do
-              %button{type: "button", class:'item__edit'}
-                商品の編集
-            .or or
-            =link_to "#" do
-              %button{type: "button", class:'item__delete'}
-                この商品を削除する
-          -else
-            =link_to confirm_item_path do
-              %button{type: "button", class:'item__purchase'}
-                購入画面に進む
-          .item__description= @item.description
+          .item__title
+            product1
           %table{:border => "1"}
             %tbody
               %tr 
@@ -53,22 +42,23 @@
                   Tシャツ/カットソー(半袖/袖なし)
               %tr
                 %th ブランド
-                %td= @brand.name
+                %td
               %tr
                 %th 商品のサイズ
                 %td
               %tr
                 %th 商品の状態
-                %td= @item.condition
+                %td 新品/未使用
               %tr
                 %th 配送料の負担
-                %td= @item.fee
+                %td 送料込み(出品者負担)
               %tr
                 %th 発送元の地域
-                %td= @area
+                %td
+                  青森県
               %tr
                 %th 発送日のめ目安
-                %td= @shipping_day
+                %td 1-2日で発送
           .option
             %ul.option__like
               %li.option__like-btn1

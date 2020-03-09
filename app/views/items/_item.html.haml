@@ -2,12 +2,12 @@
   = link_to "#" do
     .itemList--image 
       -if item.buyer.present?
-        = image_tag @images.first[:content]
+        = image_tag "#{item.image}" 
         .itemList--image__sold
           .itemList--image__sold__text
             SOLD
       - else
-        = image_tag @images.first[:content]
+        = image_tag "#{item.image}"         
     .itemList--body
       %h3.itemList--body__name
         = item.name
