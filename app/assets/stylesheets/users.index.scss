@@ -23,14 +23,12 @@
   
 }
 
-
-
-
-.container{
+.container-show{
   background-color: rgb(233, 230, 230);
   display: flex;
   width: auto;
-  padding: 120px 120px 60px 120px;
+  height: 1250px;
+  padding: 120px 120px 40px 120px;
   .side-bar{
     width: 20%;
     height: 100vh;
@@ -99,64 +97,37 @@
         }
       }
     }
-    .name-wrapper{
-      width: 100%;
-      margin-top: 32px;
-      &__name{
-      }
-    }
-    .description-wrapper{
-      width:100%;
-      &__description{
-      }
-    }
-    .category-wrapper{
-      &__category{
 
+  }   
+  .main{
+    height: 20px;
+    width: 78%;
+    &__group{
+      background-color: white;
+      margin-bottom: 40px;
+      padding: 10px;
+      &__title{
+        font-weight: bold;
+        background-color: white;
       }
     }
-    .brand-wrapper{
-      &__brand{
+    &__table{
+      background-color: white;
+      margin-bottom: 40px;
+      padding: 10px;
+      list-style: none;
+      background-color: white;
+      padding: 8px;
+      &__header{
+        background-color:lightgray;
+        border: solid 1px gray;
+        font-weight: bold;
+        padding: 8px;
+      }
+      &__list{
+        padding: 8px;
+        border: solid 1px gray;
       }
     }
-    .condition-wrapper{
-      &__condition{
-        width: 250px;
-        height: 25px;
-      }
-    }
-    .fee-wrapper{
-      &__fee{
-        width: 250px;
-        height: 25px;
-      }
-    }
-    .shipping_days-wrapper{
-      &__shipping-days{
-        width: 250px;
-        height: 25px;
-      }
-    }
-    .area-wrapper{
-      &__area{
-        width: 250px;
-        height: 25px;
-      }
-    }
-
-    .price-wrapper{
-      &__price{
-
-      }
-    }
-    .submit-wrapper{
-      text-align: center;
-      &__submit-btn{
-        padding: 10px 40px;
-        border-style: double;
-        cursor: pointer;
-      }
-    }
-
   }
 }

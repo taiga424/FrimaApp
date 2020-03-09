@@ -2,8 +2,9 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit]
 
   def index
-    @items = Item.all.limit(3)
+    @items = Item.all.limit(12)
     @images = Image.all
+
   end
 
   def show

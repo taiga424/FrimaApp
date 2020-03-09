@@ -1,3 +1,4 @@
+= render partial: "header"
 .confirm
   .confirm__main
     .content
@@ -35,9 +36,10 @@
               = link_to "＋登録してください", '#'
           .buy-action
             %p.buy-btn
-              購入する！
+              購入する
           %p.app-invitation
             アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
           .app-link-group
             = image_tag "https://pcweb-assets.mercdn.net/assets/img/common/common/app-store.svg?580978326"
             = image_tag "https://pcweb-assets.mercdn.net/assets/img/common/common/google-play.svg?580978326"
+= render partial: "footer"

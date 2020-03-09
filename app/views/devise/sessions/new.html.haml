@@ -1,7 +1,21 @@
+.header
+  .header__headerBox
+    .header__headerBox__headerMain
+      .header__headerBox__headerMain__logo
+        = link_to image_tag('logo.png'), root_path
+      .header__headerBox__headerMain__searchForm
+        %form
+          %input{ placeholder: "キーワードから探す"}
+          %button{type: "submit"}
+            .btnIcon
+              = image_tag "icon-search 1.png"   
+    .header__headerBox__nav
+      %ul.header__headerBox__nav__leftMenu
+        %li.header__headerBox__nav__leftMenu__list--first
+          = link_to "カテゴリー","#", id: "catBtn"
+        %li.header__headerBox__nav__leftMenu__list
+          = link_to "ブランド","#", id: "brandBtn"
 .single-container
-  .single-container__single-header
-    .single-container__single-header__header-logo
-      = image_tag src= "/assets/logo.png", size: "200x80"
   .single-container__single-main
     .single-container__single-main__l-single-container
       .single-container__single-main__l-single-container__l-single-head-registration
@@ -24,5 +38,4 @@
             .actions
               = f.submit "Log in",class: 'submit-form'
           = render "devise/shared/links"
-  .single-container__single-footer
-    = image_tag src= "/assets/logo-white.png", size: "100x40", class: 'footer-logo'
+= render partial: "items/footer"
