@@ -1,5 +1,7 @@
 .header {
   padding: 0 65px;
+  margin-bottom: 10px;
+  height: 100px;
   &__headerBox {
     padding: 15px 0 0;
     &__headerMain {
@@ -147,9 +149,10 @@
       width: 70px;
       height: 4px;
       background-color: #3CCACE;
+      transform: translateX(-50%);
       position: absolute;
       bottom: 0;
-      left: 525px;
+      left: 50%;
     }
     &__lists {
       max-width: 1020px;
@@ -312,9 +315,14 @@
       &__itemLists {
         width: 780px;
         margin: 26px auto 0 auto;
-        display: flex;
         justify-content: space-around;
+        overflow-x: auto;
+	      white-space: nowrap;
         &__itemList {
+          list-style: none;
+          margin-right: 20px;
+          display: inline-block;
+          color: #fff;
           a {
             background-color: #fff;
             display: inline-block;
