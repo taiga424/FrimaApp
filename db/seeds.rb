@@ -150,6 +150,7 @@ User.create!(
       tel: '00000000000'
     },
   ]
+)
 Brand.create!(
   [
     {
