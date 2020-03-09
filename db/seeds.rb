@@ -111,7 +111,7 @@ User.create!(
   [
     {
       nickname: 'taro',
-      email: 'test@taro.com',
+      email: 't1@taro.com',
       first_name: '太郎',
       last_name: '山田',
       furigana_first: 'タロウ',
@@ -122,7 +122,7 @@ User.create!(
     },
     {
       nickname: 'jiro',
-      email: 'test@jiro.com',
+      email: 'te2@jiro.com',
       first_name: '二郎',
       last_name: '山田',
       furigana_first: 'ジロウ',
@@ -133,7 +133,7 @@ User.create!(
     },
     {
       nickname: 'ichiro',
-      email: 'test@ichiro.com',
+      email: 'tes3@ichiro.com',
       first_name: '一郎',
       last_name: '山田',
       furigana_first: 'イチロウ',
@@ -144,7 +144,7 @@ User.create!(
     },
     {
       nickname: 'saburo',
-      email: 'test@saburo.com',
+      email: 'test4@saburo.com',
       first_name: '三郎',
       last_name: '山田',
       furigana_first: 'サブロウ',
