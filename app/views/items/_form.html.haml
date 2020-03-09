@@ -74,7 +74,7 @@
       .wrapper.brand-wrapper
         %label.wrapper__label
           ブランド：
-          = f.select :brand, @brands.pluck(:name), {include_blank: true, selected: 1}, class: "brand-wrapper__brand form-control"
+          = f.select :brand_id, @brands.pluck(:name), {include_blank: true, selected: 1}, class: "brand-wrapper__brand form-control"
           
       .wrapper.condition-wrapper
         %label.wrapper__label
