@@ -118,6 +118,7 @@ User.create!(
       furigana_last: 'ヤマダ',
       birthdate: '2010-07-11',
       tell: '00000000000'
+      password: ""
     },
     {
       nickname: 'jiro',
@@ -128,6 +129,7 @@ User.create!(
       furigana_last: 'ヤマダ',
       birthdate: '2010-06-11',
       tell: '00000000000'
+      password: ""
     },
     {
       nickname: 'ichiro',
@@ -138,6 +140,7 @@ User.create!(
       furigana_last: 'ヤマダ',
       birthdate: '2010-08-11',
       tell: '00000000000'
+      password: ""
     },
     {
       nickname: 'saburo',
@@ -148,6 +151,7 @@ User.create!(
       furigana_last: 'ヤマダ',
       birthdate: '2010-07-11',
       tell: '00000000000'
+      password: ""
     },
   ]
 )
