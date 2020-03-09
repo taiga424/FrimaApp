@@ -60,15 +60,25 @@ Things you may want to cover:
 |description|text|null: false|
 |price|integer|null: false|
 |image|string|null: false|
-|brand|string|
 |condition|integer|
 |fee|integer|null: false|
 |area|integer|null: false|
 |shipping_days|integer|null: false|
+|brand_id|integer|foreign_key: true|
 
 ### Association
 - belongs_to :user
 - belongs_to :category
+- belongs_to :brand
+
+
+### brandテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|
+
+### Association
+- has_many :items
 
 
 ## Categoriesテーブル
