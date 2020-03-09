@@ -107,3 +107,68 @@ Image.create!(
     },
   ]
 )
+User.create!(
+  [
+    {
+      nickname: 'taro'
+      email: 'test@taro.com'
+      first_name: '太郎'
+      last_name: '山田'
+      furigana_first: 'タロウ'
+      furigana_last: 'ヤマダ'
+      birthdate: '2010-07-11'
+      tel: '00000000000'
+    },
+    {
+      nickname: 'jiro'
+      email: 'test@jiro.com'
+      first_name: '二郎'
+      last_name: '山田'
+      furigana_first: 'ジロウ'
+      furigana_last: 'ヤマダ'
+      birthdate: '2010-06-11'
+      tel: '00000000000'
+    },
+    {
+      nickname: 'ichiro'
+      email: 'test@ichiro.com'
+      first_name: '一郎'
+      last_name: '山田'
+      furigana_first: 'イチロウ'
+      furigana_last: 'ヤマダ'
+      birthdate: '2010-08-11'
+      tel: '00000000000'
+    },
+    {
+      nickname: 'saburo'
+      email: 'test@taro.com'
+      first_name: '太郎'
+      last_name: '山田'
+      furigana_first: 'タロウ'
+      furigana_last: 'ヤマダ'
+      birthdate: '2010-07-11'
+      tel: '00000000000'
+    },
+    
+Brand.create!(
+  [
+    {
+      name: 'NIKE'
+    },
+    {
+      name: 'GUCCI'
+    },
+    {
+      name: 'ADDIDAS'
+    },
+    {
+      name: 'LACOSTE'
+    },
+    {
+      name: 'PUMA'
+    },
+    {
+      name: 'CONVERSE'
+    },
+  ]
+)
