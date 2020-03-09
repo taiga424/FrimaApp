@@ -149,7 +149,7 @@ User.create!(
       birthdate: '2010-07-11',
       tel: '00000000000'
     },
-    
+  ]
 Brand.create!(
   [
     {
