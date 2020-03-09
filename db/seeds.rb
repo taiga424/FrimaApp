@@ -99,18 +99,18 @@ Image.create!(
     },
     {
       content: 'clothes3.jpeg'
-    }
+    },
     {
       content: 'clothes4.jpeg'
-    }
+    },
     {
       content: 'clothes5.jpeg'
-    }
+    },
     {
       content: 'clothes6.jpeg'
-    }
+    },
     {
       content: 'clothes7.jpeg'
-    }
+    },
   ]
 )
