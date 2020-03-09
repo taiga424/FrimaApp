@@ -117,7 +117,7 @@ User.create!(
       furigana_first: 'タロウ',
       furigana_last: 'ヤマダ',
       birthdate: '2010-07-11',
-      tell: '00000000000'
+      tell: '00000000000',
       password: ""
     },
     {
@@ -128,7 +128,7 @@ User.create!(
       furigana_first: 'ジロウ',
       furigana_last: 'ヤマダ',
       birthdate: '2010-06-11',
-      tell: '00000000000'
+      tell: '00000000000',
       password: ""
     },
     {
@@ -139,7 +139,7 @@ User.create!(
       furigana_first: 'イチロウ',
       furigana_last: 'ヤマダ',
       birthdate: '2010-08-11',
-      tell: '00000000000'
+      tell: '00000000000',
       password: ""
     },
     {
@@ -150,7 +150,7 @@ User.create!(
       furigana_first: 'タロウ',
       furigana_last: 'ヤマダ',
       birthdate: '2010-07-11',
-      tell: '00000000000'
+      tell: '00000000000',
       password: ""
     },
   ]
