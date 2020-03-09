@@ -117,7 +117,7 @@ User.create!(
       furigana_first: 'タロウ',
       furigana_last: 'ヤマダ',
       birthdate: '2010-07-11',
-      tel: '00000000000'
+      tell: '00000000000'
     },
     {
       nickname: 'jiro',
@@ -127,7 +127,7 @@ User.create!(
       furigana_first: 'ジロウ',
       furigana_last: 'ヤマダ',
       birthdate: '2010-06-11',
-      tel: '00000000000'
+      tell: '00000000000'
     },
     {
       nickname: 'ichiro',
@@ -137,7 +137,7 @@ User.create!(
       furigana_first: 'イチロウ',
       furigana_last: 'ヤマダ',
       birthdate: '2010-08-11',
-      tel: '00000000000'
+      tell: '00000000000'
     },
     {
       nickname: 'saburo',
@@ -147,7 +147,7 @@ User.create!(
       furigana_first: 'タロウ',
       furigana_last: 'ヤマダ',
       birthdate: '2010-07-11',
-      tel: '00000000000'
+      tell: '00000000000'
     },
   ]
 )
