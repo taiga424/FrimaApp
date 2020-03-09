@@ -144,7 +144,7 @@ User.create!(
     },
     {
       nickname: 'saburo',
-      email: 'test@taro.com',
+      email: 'test@saburo.com',
       first_name: '三郎',
       last_name: '山田',
       furigana_first: 'サブロウ',
