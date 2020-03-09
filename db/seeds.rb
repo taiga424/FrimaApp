@@ -5,7 +5,6 @@ Item.create!(
       name: 'パーカー',
       description: 'パーカーです',
       price: 1000,
-      brand: '',
       condition: '',
       image: 'clothes1.jpeg',
       fee: 100,
@@ -17,7 +16,6 @@ Item.create!(
     #   name: 'スウェット',
     #   description: 'スウェットです',
     #   price: 2000,
-    #   brand: '',
     #   condition: '',
     #   image: 'clothes2.jpeg',
     #   fee: 200 ,
@@ -29,7 +27,6 @@ Item.create!(
       name: 'ワンピース',
       description: 'ワンピースです',
       price: 3000,
-      brand: '',
       condition: '',
       image: 'clothes3.jpeg',
       fee: 300,
@@ -41,7 +38,6 @@ Item.create!(
       name: '靴',
       description: '靴です',
       price: 4000,
-      brand: '',
       condition: '',
       image: 'clothes4.jpeg',
       fee: 200,
@@ -53,7 +49,6 @@ Item.create!(
       name: '子供服',
       description: '子供服です',
       price: 5000,
-      brand: '',
       condition: '',
       image: 'clothes5.jpeg',
       fee: 100,
@@ -65,7 +60,6 @@ Item.create!(
       name: 'スカート',
       description: 'スカートです',
       price: 6000,
-      brand: '',
       condition: '',
       image: 'clothes6.jpeg',
       fee: 500,
@@ -77,7 +71,6 @@ Item.create!(
       name: 'バッグ',
       description: 'バッグです',
       price: 2000,
-      brand: '',
       condition: '',
       image: 'clothes7.jpeg',
       fee: 200,
@@ -89,7 +82,6 @@ Item.create!(
     #   name: 'パンツ',
     #   description: 'パンツです',
     #   price: 6000,
-    #   brand: '',
     #   condition: '',
     #   image: 'clothes8.jpeg',
     #   fee: 400,
@@ -97,5 +89,28 @@ Item.create!(
     #   shipping_days: 2,
     #   buyer: 2,
     # },
+  ]
+)
+
+Image.create!(
+  [
+    {
+      content: 'clothes1.jpeg'
+    },
+    {
+      content: 'clothes3.jpeg'
+    }
+    {
+      content: 'clothes4.jpeg'
+    }
+    {
+      content: 'clothes5.jpeg'
+    }
+    {
+      content: 'clothes6.jpeg'
+    }
+    {
+      content: 'clothes7.jpeg'
+    }
   ]
 )
