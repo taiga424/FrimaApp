@@ -14,14 +14,20 @@
     .header__headerBox__nav
       %ul.header__headerBox__nav__leftMenu
         %li.header__headerBox__nav__leftMenu__list--first
-          = link_to "カテゴリー","#", id: "catBtn"
+          = link_to "カテゴリー","#", id: "catBtn" 
         %li.header__headerBox__nav__leftMenu__list
-          = link_to "ブランド","#", id: "brandBtn"
+          = link_to "ブランド","#", id: "brandBtn" 
       %ul.header__headerBox__nav__rightMenu
-        %li.header__headerBox__nav__rightMenu__list--login
-          = link_to "ログイン","#"
-        %li.header__headerBox__nav__rightMenu__list--new
-          = link_to "新規会員登録","#"
+        -if user_signed_in?
+          %li.header__headerBox__nav__rightMenu__list--logout
+            = link_to "ログアウト", destroy_user_session_path, method: :delete 
+          %li.header__headerBox__nav__rightMenu__list--mypage
+            = link_to "マイページ","#" 
+        -else
+          %li.header__headerBox__nav__rightMenu__list--login
+            = link_to "ログイン", new_user_session_path 
+          %li.header__headerBox__nav__rightMenu__list--new
+            = link_to "新規会員登録","#" 
 
 .contents
 

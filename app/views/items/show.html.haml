@@ -8,14 +8,13 @@
           .item__img
             %ul.item__img__list
               %li.item__img__list__top
-                = image_tag @item.image, class:"img"
-                %ul.bottom
-                  %li
-                    = image_tag @item.image, class:"img"
-                  %li
-                    = image_tag @item.image, class:"img"
-                  %li
-                    = image_tag @item.image, class:"img"
+                = image_tag @images.first[:content], class:"img-top"
+                - if @images.length{[:content] >= 2 }
+                  %ul.bottom
+                    .bottom__list
+                      - @images.each do |images|
+                        %li
+                          = image_tag images[:content], class:"img-bottom"
           .item__price 
             %span 
               = @item.price 
@@ -25,8 +24,18 @@
                 (税込)
               %span 
                 送料込み
-          %button{type: "button", class:'item__purchase'}
-            購入画面に進む
+          -if current_user.id == @item.user_id
+            =link_to edit_item_path do
+              %button{type: "button", class:'item__edit'}
+                商品の編集
+            .or or
+            =link_to "#" do
+              %button{type: "button", class:'item__delete'}
+                この商品を削除する
+          -else
+            =link_to confirm_item_path do
+              %button{type: "button", class:'item__purchase'}
+                購入画面に進む
           .item__description= @item.description
           %table{:border => "1"}
             %tbody
