@@ -19,7 +19,7 @@ class Item < ApplicationRecord
     佐賀県:41, 長崎県:42, 大分県:43, 熊本県:44, 宮崎県:45, 鹿児島県:46, 沖縄県:47
   }
 
-  belongs_to :brand
-  belongs_to :user
+  belongs_to :brand, optional: true
+  belongs_to :user, optional: true
   has_many :images
 end
