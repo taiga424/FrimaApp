@@ -118,7 +118,7 @@ User.create!(
       furigana_last: 'ヤマダ',
       birthdate: '2010-07-11',
       tell: '00000000000',
-      password: ""
+      password: "tarotaro"
     },
     {
       nickname: 'jiro',
@@ -129,7 +129,7 @@ User.create!(
       furigana_last: 'ヤマダ',
       birthdate: '2010-06-11',
       tell: '00000000000',
-      password: ""
+      password: "jirojiro"
     },
     {
       nickname: 'ichiro',
@@ -140,18 +140,18 @@ User.create!(
       furigana_last: 'ヤマダ',
       birthdate: '2010-08-11',
       tell: '00000000000',
-      password: ""
+      password: "ichirouichirou"
     },
     {
       nickname: 'saburo',
       email: 'test@taro.com',
-      first_name: '太郎',
+      first_name: '三郎',
       last_name: '山田',
-      furigana_first: 'タロウ',
+      furigana_first: 'サブロウ',
       furigana_last: 'ヤマダ',
       birthdate: '2010-07-11',
       tell: '00000000000',
-      password: ""
+      password: "saburosaburo"
     },
   ]
 )
