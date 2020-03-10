@@ -100,8 +100,7 @@
           %h3.title
             新規投稿商品
       %ul.contents__categories__itemBox__itemLists
-        - @items.each do |item|
-          = render partial: "item", locals: { item: item }
+        = render "item"
         
   .contents__categories
     %h2.contents__categories__head
@@ -112,8 +111,9 @@
           %h3.title
             アーカイバ         
       %ul.contents__categories__itemBox__itemLists
-        - @items.each do |item|
-          = render partial: "item", locals: { item: item }
+        = render "item"
+        -# - @items.each do |item|
+        -#   = render partial: "item", locals: { item: item }
 
 .bottomVisual
   .bottomVisual__content

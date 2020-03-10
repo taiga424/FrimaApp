@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all.limit(12)
     @images = Image.all
-
+    @image = @images.where(item_id: @items.ids)
   end
 
   def show

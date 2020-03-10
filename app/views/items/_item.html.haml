@@ -1,22 +1,23 @@
-%li.contents__categories__itemBox__itemLists__itemList
-  = link_to "#" do
-    .itemList--image 
-      -if item.buyer.present?
-        = image_tag asset_path(@images.first[:content])
-        .itemList--image__sold
-          .itemList--image__sold__text
-            SOLD
-      - else
-        = image_tag asset_path(@images.first[:content])
-    .itemList--body
-      %h3.itemList--body__name
-        = item.name
-      .itemList--body__details
-        %ul
-          %li
-            = item.price
-          %li
-            = icon('fas', 'star')
-            0
-        %p
-          (税込)
+- @items.each do |item|
+  %li.contents__categories__itemBox__itemLists__itemList
+    = link_to item_path(item) do
+      .itemList--image
+        -if item.buyer.present?
+          = image_tag asset_path(item.images[0].content)
+          .itemList--image__sold
+            .itemList--image__sold__text
+              SOLD
+        - else
+          = image_tag asset_path(item.images[0].content)
+      .itemList--body
+        %h3.itemList--body__name
+          = item.name
+        .itemList--body__details
+          %ul
+            %li
+              = item.price
+            %li
+              = icon('fas', 'star')
+              0
+          %p
+            (税込)
