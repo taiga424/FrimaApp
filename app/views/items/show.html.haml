@@ -30,7 +30,7 @@
               %button{type: "button", class:'item__edit'}
                 商品の編集
             .or or
-            =link_to "#" do
+            =link_to item_path, method: :delete do
               %button{type: "button", class:'item__delete'}
                 この商品を削除する
           -else
