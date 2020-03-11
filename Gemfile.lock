@@ -313,7 +313,6 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails
-
   listen
   mysql2 (>= 0.4.4, < 0.6.0)
   payjp
