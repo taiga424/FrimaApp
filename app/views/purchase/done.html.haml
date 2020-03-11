@@ -1,0 +1,32 @@
+= render partial: "items/header"
+.confirm
+  .confirm__main
+    .content
+      .content__top
+        .item-wrapper
+          %h2.title
+            購入完了しました
+          .item-info
+            .item-info__wrapper
+              = image_tag "a001.png", class:"img"
+              .item-info__wrapper__group
+                .item-info__wrapper__group__description
+                  product1
+                .item-info__wrapper__group__price
+                  %span 
+                    ¥10000
+                  %span 
+                    (税込)
+                  %span 
+                    送料込み
+          .buy-info
+            %h2.buy-info__title
+              支払い金額
+            .buy-info__price
+              ¥10000
+          .buy-action
+            = link_to "ホームに戻る", root_path
+= render partial: "items/footer"
+
+
+

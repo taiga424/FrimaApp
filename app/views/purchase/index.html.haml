@@ -8,13 +8,13 @@
             購入内容の確認
           .item-info
             .item-info__wrapper
-              = image_tag @images.first[:content]
+              = image_tag "a001.png", class:"img"
               .item-info__wrapper__group
                 .item-info__wrapper__group__description
-                  = @item.name
+                  product1
                 .item-info__wrapper__group__price
                   %span 
-                    = @item.price 
+                    ¥10000
                   %span 
                     (税込)
                   %span 
@@ -23,7 +23,7 @@
             %h2.buy-info__title
               支払い金額
             .buy-info__price
-              = @item.price
+              ¥10000
           .buy-method
             %h3.buy-method__title
               支払い方法
@@ -42,7 +42,7 @@
             .register-link
               = link_to "＋登録してください", '#'
           .buy-action
-            = form_tag(pay_item_path, method: :post) do
+            = form_tag(action: :pay, method: :post) do
               %button 購入する
           %p.app-invitation
             アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
@@ -50,4 +50,6 @@
             = image_tag "https://pcweb-assets.mercdn.net/assets/img/common/common/app-store.svg?580978326"
             = image_tag "https://pcweb-assets.mercdn.net/assets/img/common/common/google-play.svg?580978326"
 = render partial: "footer"
+
+
 
