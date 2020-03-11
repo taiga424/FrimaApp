@@ -11,11 +11,10 @@ class ItemsController < ApplicationController
 
   def show
     @images = Image.where(item_id: @item.id)
-    @shipping_day = Item.shipping_days.keys[@item.shipping_days-1]
-    @area = Item.prefectures.keys[@item.area-1]
+    # @shipping_day = Item.shipping_days.keys[@item.shipping_days-1]
+    @shipping_day = @item.shipping_days
+    @area = @item.area
     @brand = Brand.find(@item.brand_id)
-    @comment = Comment.new
-    @comments = @item.comments.includes(:user)    
   end
 
   def confirm
@@ -26,7 +25,7 @@ class ItemsController < ApplicationController
       #登録された情報がない場合にカード登録画面に移動
       redirect_to controller: "card", action: "new"
     else
-      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       #保管した顧客IDでpayjpから情報取得
       customer = Payjp::Customer.retrieve(card.customer_id)
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
@@ -40,32 +39,46 @@ class ItemsController < ApplicationController
 
   def pay
     card = Card.where(user_id: current_user.id).first
-    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
     :amount => @item.price, #支払金額を入力（itemテーブル等に紐づけても良い）
     :customer => card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
       )
-    @item.update( purchase_id: current_user.id)
     redirect_to action: 'done' #完了画面に移動
   end
 
   def new
     @item = Item.new
-    @brands = Brand.group(:name)
+    @brands = Brand.all
+    # @categories = Category.where(ancestry: nil)
     @category_parent_array = ["指定なし"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
     end
+    # @category = Category.where(ancestry: nil)
+    
+    # @category_parent_array = @category.pluck(:name)
+    @item.images.build
+    # @brand = Brand.find(params[:id])
   end
 
   def create
+    # @category = Category.find_by(params[:category_id])
     @item = Item.new(item_params)
-    if @item.save
-      redirect_to root_path
+    if @item.save && @item.images.count != 0
+      # original_file = params[:item][:images_attributes][:content][0].original_filename
+      # original_file.create!
+      # params[:item][:images_attributes][:content].each do |i|
+      #   @image = i.create!(content: i.original_filename, item_id: @item.id)
+      # end
+      @image = @item.images.create
+      redirect_to :root
     else
+      flash.now[:alert] = '画像を１枚以上添付してください'
       render :new
     end
+
   end
 
   def edit
@@ -89,8 +102,13 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :price, :image, :condition, :fee, :area, :shipping_days, brand: [:name, :id]).merge(user_id: current_user.id)
+    params.require(:item).permit(
+      :name, :description, :price, :brand_id, :area, :condition, :fee,
+      :shipping_days, images_attributes: [:content, :id, :_destroy]
+      ).merge(user_id: current_user.id, category_id: params[:category_id], brand_id: params[:item][:brand_id])
   end
+
+  
 
   def set_item
     @item = Item.find(params[:id])
