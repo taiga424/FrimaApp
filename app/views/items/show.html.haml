@@ -1,31 +1,43 @@
+= render partial: "header"
 .show
   .show__main
     .content
       .content__top
         .item
           %h2.item__name 
-            product1
+            = @item.name
           .item__img
             %ul.item__img__list
               %li.item__img__list__top
-                = image_tag "a001.png", class:"img"
-                %ul.bottom
-                  %li
-                    = image_tag "a001.png", class:"img"
-                  %li
-                    = image_tag "a002.png", class:"img"
-                  %li
-                    = image_tag "a003.png", class:"img"
-          .item__price
+                = image_tag @images.first[:content], class:"img-top"
+                - if @images.length{[:content] >= 2 }
+                  %ul.bottom
+                    .bottom__list
+                      - @images.each do |images|
+                        %li
+                          = image_tag images[:content], class:"img-bottom"
+          .item__price 
             %span 
-              ¥10000
+              = @item.price 
+              円
             .item__price-tax
               %span 
                 (税込)
               %span 
                 送料込み
-          .item__title
-            product1
+          -if current_user.id == @item.user_id
+            =link_to edit_item_path do
+              %button{type: "button", class:'item__edit'}
+                商品の編集
+            .or or
+            =link_to item_path, method: :delete do
+              %button{type: "button", class:'item__delete'}
+                この商品を削除する
+          -else
+            =link_to confirm_item_path do
+              %button{type: "button", class:'item__purchase'}
+                購入画面に進む
+          .item__description= @item.description
           %table{:border => "1"}
             %tbody
               %tr 
@@ -34,30 +46,29 @@
               %tr
                 %th カテゴリ
                 %td
-                  レディース
+                  = @item.category.parent.parent.name
                   %br
-                  トップス
+                  = @item.category.parent.name
                   %br
-                  Tシャツ/カットソー(半袖/袖なし)
+                  = @item.category.name
               %tr
                 %th ブランド
-                %td
+                %td= @brand.name
               %tr
                 %th 商品のサイズ
                 %td
               %tr
                 %th 商品の状態
-                %td 新品/未使用
+                %td= @item.condition
               %tr
                 %th 配送料の負担
-                %td 送料込み(出品者負担)
+                %td= @item.fee
               %tr
                 %th 発送元の地域
-                %td
-                  青森県
+                %td= @area
               %tr
                 %th 発送日のめ目安
-                %td 1-2日で発送
+                %td= @shipping_day
           .option
             %ul.option__like
               %li.option__like-btn1
@@ -85,4 +96,5 @@
           %i
       .other
         レディースをもっと見る
+= render partial: "footer"
         

@@ -1,0 +1,133 @@
+*{
+  box-sizing: border-box;
+}
+
+@media screen and (max-width:1023px) {
+  .container{
+    font-size: 8px!important;
+    padding: 0!important;
+    .side-bar{
+      display: none;
+    }
+    .main-items{
+      width: 100%!important;
+      .submit-wrapper{
+        margin: 30px auto!important;
+        &__submit-btn{
+          width: 100%;
+          
+        }
+      }
+    }
+  }
+  
+}
+
+.container-show{
+  background-color: rgb(233, 230, 230);
+  display: flex;
+  width: auto;
+  height: 1250px;
+  padding: 120px 120px 40px 120px;
+  .side-bar{
+    width: 20%;
+    height: 100vh;
+    margin-right: 24px;
+    &__group{
+      background-color: white;
+      margin-bottom: 40px;
+      padding: 10px;
+      &__title{
+        font-weight: bold;
+        margin-bottom: 16px;
+      }
+      &__list{
+        list-style: none;
+        border: solid 1px gray;
+        background-color: white;
+        padding: 8px;
+        a{
+          text-decoration: none;
+          color: rgb(119, 118, 118);
+        }
+      }
+    }
+
+  }
+  .main-items{
+    width: 80%;
+    height: 100%;
+    
+    .wrapper{
+      margin: 0 8px 16px 8px;
+      width: 100%;
+      &__label{
+        padding: 0 32px;
+        display: flex;
+        justify-content: space-between;
+        .required{
+          color: red;
+        }
+      }
+      .form-control{
+        width: 70%;
+        padding: 10px;
+      }
+    }
+    .form-separator{
+      display: block;
+      margin: 32px 16px;
+      border: 1px solid rgb(172, 168, 168);
+    }
+    .image-wrapper{
+      display:flex;
+      height: 200px;
+      overflow: auto;
+      &__label{
+        border: solid 1px rgb(185, 185, 185);
+        padding: 20px 30px;
+        margin: 8px;
+        width: auto;
+        width: 200px;
+        &__image{
+          height: 100%;
+        }
+        &__file{
+          display: none;
+        }
+      }
+    }
+
+  }   
+  .main{
+    height: 20px;
+    width: 78%;
+    &__group{
+      background-color: white;
+      margin-bottom: 40px;
+      padding: 10px;
+      &__title{
+        font-weight: bold;
+        background-color: white;
+      }
+    }
+    &__table{
+      background-color: white;
+      margin-bottom: 40px;
+      padding: 10px;
+      list-style: none;
+      background-color: white;
+      padding: 8px;
+      &__header{
+        background-color:lightgray;
+        border: solid 1px gray;
+        font-weight: bold;
+        padding: 8px;
+      }
+      &__list{
+        padding: 8px;
+        border: solid 1px gray;
+      }
+    }
+  }
+}
