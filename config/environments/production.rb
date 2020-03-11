@@ -64,7 +64,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "FrimaApp_#{Rails.env}"
 
   # ESCがなくなる記載
-  config.active_record.colorize_logging = false
+  config.colorize_logging = false
 
   config.action_mailer.perform_caching = false
 
