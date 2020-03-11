@@ -104,7 +104,7 @@
           発送元の地域：
           %span.required
             ※必須
-          = f.select :area, ApplicationRecord.prefectures.keys, { include_blank: true, selected: 1}, class: "area-wrapper__area form-control", required: "required"
+          = f.select :area, Item.prefectures.keys, { include_blank: true, selected: 1 }, class: "area-wrapper__area form-control", required: "required"
       .form-separator
 
       .wrapper.price-wrapper
@@ -113,7 +113,4 @@
           %span.required
             ※必須
           = f.text_field :price, class: "price-wrapper__price form-control", required: "required"
-
-= render partial: "header"
-= render "form"
 = render partial: "footer"

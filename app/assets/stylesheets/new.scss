@@ -30,7 +30,7 @@
   background-color: rgb(233, 230, 230);
   display: flex;
   width: auto;
-  padding: 120px 120px 60px 120px;
+  padding: 120px;
   .side-bar{
     width: 20%;
     height: 100vh;
@@ -69,12 +69,6 @@
         justify-content: space-between;
         .required{
           color: red;
-        }
-        .category-wrapper-select {
-          width: 70%;
-          .form-control{
-            width: 100%;
-          }
         }
       }
       .form-control{
@@ -117,8 +111,31 @@
       }
     }
     .category-wrapper{
-      &__category{
-
+      width: 100%;
+      .category-wrapper-select{
+        width: 70%;
+        #parent_category {
+          width: 100%;
+          height: auto;
+        }
+      }
+      #children_wrapper {
+        float: right;
+        width: 100%;
+        text-align: right;
+        margin-right:32px ;
+        #child_category {
+          width: 64%;
+        }
+      }
+      #grandchildren_wrapper {
+        float: right;
+        width: 100%;
+        text-align: right;
+        margin-right:32px ;
+        #grandchild_category {
+          width: 64%;
+        }
       }
     }
     .brand-wrapper{

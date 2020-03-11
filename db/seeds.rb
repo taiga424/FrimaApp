@@ -69,6 +69,7 @@ Brand.create!(
     },
   ]
 )
+require './db/seeds/category.rb'
 Item.create!(
   [
     {
@@ -82,7 +83,7 @@ Item.create!(
       customer_id: 2,
       brand_id: 1,
       user_id: 1,
-      category_id: 1,
+      category_id: 194,
     },
     # {
     #   name: 'スウェット',
@@ -106,7 +107,7 @@ Item.create!(
       customer_id: '',
       brand_id: 2,
       user_id: 1,
-      category_id: 4,
+      category_id: 98,
     },
     {
       name: '靴',
@@ -119,7 +120,7 @@ Item.create!(
       customer_id: 2,
       brand_id: 3,
       user_id: 1,
-      category_id: 3,
+      category_id: 295,
     },
     {
       name: '子供服',
@@ -132,7 +133,7 @@ Item.create!(
       customer_id: '',
       brand_id: 4,
       user_id: 2,
-      category_id: 2,
+      category_id: 110,
     },
     {
       name: 'スカート',
@@ -145,7 +146,7 @@ Item.create!(
       customer_id: 1,
       brand_id: 5,
       user_id: 3,
-      category_id: 4,
+      category_id: 164,
     },
     {
       name: 'バッグ',
@@ -158,7 +159,7 @@ Item.create!(
       customer_id: '',
       brand_id: 6,
       user_id: 4,
-      category_id: 1,
+      category_id: 198,
     },
     # {
     #   name: 'パンツ',
@@ -201,4 +202,4 @@ Image.create!(
     },
   ]
 )
-require './db/seeds/category.rb'
+
