@@ -3,7 +3,7 @@
     - if user_signed_in?
       = link_to item_path(item) do
         .itemList--image
-          -if item.buyer.present?
+          -if item.customer_id.present?
             = image_tag asset_path(item.images[0].content)
             .itemList--image__sold
               .itemList--image__sold__text
@@ -25,7 +25,7 @@
     - else
       = link_to new_user_session_path do
         .itemList--image
-          -if item.buyer.present?
+          -if item.customer_id.present?
             = image_tag asset_path(item.images[0].content)
             .itemList--image__sold
               .itemList--image__sold__text
