@@ -70,6 +70,12 @@
         .required{
           color: red;
         }
+        .category-wrapper-select {
+          width: 70%;
+          .form-control{
+            width: 100%;
+          }
+        }
       }
       .form-control{
         width: 70%;
