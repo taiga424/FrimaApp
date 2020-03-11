@@ -6,6 +6,7 @@ class CardController < ApplicationController
     card = Card.where(user_id: current_user.id)
     redirect_to action: "show" if card.exists?
   end
+  
 
   def pay #payjpとCardのデータベース作成を実施します。
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]

@@ -14,18 +14,13 @@ Rails.application.routes.draw do
 
   resources :items, only:[:show, :new, :create, :edit, :destroy] do
     member do
-      get :confirm
+      get 'confirm', to: 'items#confirm'
+      post 'pay', to: 'items#pay'
+      get 'done', to: 'items#done'
     end
   end
 
   resources :users, only: [:index, :show]
 
-  resources :purchase, only: [:index] do
-    collection do
-      get 'index', to: 'purchase#index'
-      post 'pay', to: 'purchase#pay'
-      get 'done', to: 'purchase#done'
-    end
-  end
 
 end

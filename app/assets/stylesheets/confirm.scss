@@ -86,10 +86,14 @@ a:link, a:visited, a:hover, a:active {
             text-align: center;
             padding: $content-padding;
             margin:0 auto;
-            .buy-btn{
+            form button{
               padding: 10px;
               color: white;
               background-color: #A4A4A4;
+              padding: 20px;
+              border-radius: 5px;
+              width: 250px;
+              font-size: 20px;
             }
           }
           .app-invitation{
