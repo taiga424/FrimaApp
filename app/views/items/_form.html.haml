@@ -65,11 +65,12 @@
       .form-separator
 
       .wrapper.category-wrapper
-        %label.wrapper__label
+        = f.label :name , class: 'wrapper__label', id: "wrapper__label--category" do
           カテゴリー：
-          %span.required
-            ※必須
-          = f.select :category, [['テスト', 1], ['test', 2]], {include_blank: "指定なし"}, class: "category-wrapper__category form-control", required: "required"
+          %span.required ※必須
+          .category-wrapper-select
+            .category-wrapper-select__box
+              = f.select :category, @category_parent_array, {}, {class: 'category-wrapper__category form-control', id: 'parent_category'}
 
       .wrapper.brand-wrapper
         %label.wrapper__label
