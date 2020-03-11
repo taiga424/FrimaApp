@@ -33,7 +33,7 @@
       %li.side-bar__group__list
         = link_to "クーポンの確認", "#"
       %li.side-bar__group__list
-        = link_to "支払い方法の登録", "#"
+        = link_to "支払い情報", new_card_path
       %li.side-bar__group__list
         = link_to "設定", "#"
       %li.side-bar__group__list
@@ -43,7 +43,7 @@
       %li.side-bar__group__list
         = link_to "はじめての方へ", "#"
       %li.side-bar__group__list
-        = link_to "ログアウト", "#"
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
 
   .main
     %section.main__group
