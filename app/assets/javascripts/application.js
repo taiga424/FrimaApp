@@ -14,5 +14,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require activestorage
+<<<<<<< HEAD
 //= require_tree .
 
+=======
+//= require turbolinks
+//= require_tree .
+>>>>>>> new-category&iamges-wip

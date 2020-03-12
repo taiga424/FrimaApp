@@ -84,3 +84,4 @@ gem 'dotenv-rails'
 gem 'jquery-ui-rails'
 gem 'rspec-rails'
 gem 'carrierwave'
+
