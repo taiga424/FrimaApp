@@ -25,7 +25,7 @@ $(function(){
                                 <select>
                               </div>
                             </div>`;
-    $('#children-wrapper').append(grandchildSelectHtml);
+    $('#children_wrapper').append(grandchildSelectHtml);
   }
   $('#parent_category').on('change', function(){
     var parentCategory = document.getElementById('parent_category').value;
