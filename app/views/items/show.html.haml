@@ -8,14 +8,18 @@
             = @item.name
           .item__img
             %ul.item__img__list
-              %li.item__img__list__top
-                = image_tag @images.first[:content], class:"img-top"
-                - if @images.length{[:content] >= 2 }
-                  %ul.bottom
-                    .bottom__list
-                      - @images.each do |images|
-                        %li
-                          = image_tag images[:content], class:"img-bottom"
+              .swiper-container.swiper1
+                .swiper-wrapper
+                  - @images.each do |images|
+                    = image_tag images[:content], class:"swiper-slide"
+                .swiper-button-prev.prev1
+                .swiper-button-next.next1
+                .swiper-pagination
+                  
+              .swiper-container.swiper2
+                .swiper-wrapper
+                  - @images.each do |images|
+                    = image_tag images[:content], class:"swiper-slide"
           .item__price 
             %span 
               = @item.price 
@@ -97,4 +101,3 @@
       .other
         レディースをもっと見る
 = render partial: "footer"
-        
