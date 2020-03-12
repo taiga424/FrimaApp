@@ -18,6 +18,8 @@
       -if user_signed_in?
         %ul.header__headerBox__nav__rightMenu
           %li.header__headerBox__nav__rightMenu__list--login
+            = link_to "マイページ", users_path
+          %li.header__headerBox__nav__rightMenu__list--login
             = link_to "ログアウト", destroy_user_session_path, method: :delete
       -else
         %ul.header__headerBox__nav__rightMenu

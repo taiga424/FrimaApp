@@ -67,9 +67,10 @@
       .wrapper.category-wrapper
         %label.wrapper__label#wrapper__label--category
           カテゴリー：
-          %span.required
-            ※必須
-          = f.select :category, [['テスト', 1], ['test', 2]], {include_blank: "指定なし"}, class: "category-wrapper__category form-control", required: "required"
+          %span.required ※必須
+          .category-wrapper-select
+            .category-wrapper-select__box
+              = f.select :category, @category_parent_array, {}, {class: 'category-wrapper__category form-control', id: 'parent_category'}
 
       .wrapper.brand-wrapper
         %label.wrapper__label

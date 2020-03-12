@@ -46,11 +46,11 @@
               %tr
                 %th カテゴリ
                 %td
-                  レディース
+                  = @item.category.parent.parent.name
                   %br
-                  トップス
+                  = @item.category.parent.name
                   %br
-                  Tシャツ/カットソー(半袖/袖なし)
+                  = @item.category.name
               %tr
                 %th ブランド
                 %td= @brand.name
