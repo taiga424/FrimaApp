@@ -1,3 +1,6 @@
+= render partial: "items/header"
+- breadcrumb :mypage
+= render "layouts/breadcrumbs"
 .container-show 
   .side-bar
     %section.side-bar__group
@@ -64,7 +67,4 @@
         出品した商品
       %li.main__table__list
         222を出品しました
-        
-
-
-    
+= render partial: "items/footer"
