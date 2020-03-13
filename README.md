@@ -67,7 +67,7 @@ Things you may want to cover:
 |fee|integer|null: false|
 |area|string|null: false|
 |shipping_days|integer|null: false|
-|customer_id|integer|foreign_key: true|
+|purchase_id|integer|foreign_key: true|
 |brand_id|bigint|foreign_key: true|
 |user_id|bigint|foreign_key: true|
 |category_id|bigint|foreign_key: true|
