@@ -5,12 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          has_many :items
   validates :nickname, presence: true
+  validates :encrypted_password, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :furigana_first, presence: true
   validates :furigana_last, presence: true
   validates :birthdate, presence: true
-  validates :encrypted_password, presence: true, length: { maximum: 30 }
+  validates :password, presence: true, length: { maximum: 7 }
 
 end
 
