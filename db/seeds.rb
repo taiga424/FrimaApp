@@ -144,7 +144,7 @@ Item.create!(
       condition: 5,
       fee: 2,
       area: 1,
-      shipping_days: 4,
+      shipping_days: 3,
       purchase_id: '',
       brand_id: 6,
       user_id: 4,

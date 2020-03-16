@@ -65,15 +65,9 @@ ActiveRecord::Schema.define(version: 2020_03_13_120256) do
     t.integer "fee", null: false
     t.string "area", null: false
     t.integer "shipping_days", null: false
-<<<<<<< HEAD
     t.string "purchase_id"
-    t.bigint "brand_id"
-    t.bigint "user_id"
-=======
-    t.string "customer_id"
     t.bigint "user_id"
     t.bigint "brand_id"
->>>>>>> new-category&iamges-wip
     t.bigint "category_id", null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
@@ -99,12 +93,9 @@ ActiveRecord::Schema.define(version: 2020_03_13_120256) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
-=======
   add_foreign_key "images", "items"
->>>>>>> new-category&iamges-wip
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
