@@ -29,6 +29,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.build_address(@address.attributes)
     @user.save
     sign_in(:user, @user)
+    redirect_to root_path
   end
 
   protected
@@ -37,7 +38,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def address_params
-    params.require(:address).permit(:prefecture, :city, :number, :postal_code)
+    params.require(:address).permit(:prefecture, :city, :number, :postal_code, :building)
   end
 
   # before_action :configure_sign_up_params, only: [:create]
