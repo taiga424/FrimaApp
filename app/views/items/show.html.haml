@@ -1,4 +1,6 @@
 = render partial: "header"
+- breadcrumb :item_show
+= render "layouts/breadcrumbs"
 .noticeContainer
   -if flash.notice.present?
     .alert.alert-success= flash.notice
