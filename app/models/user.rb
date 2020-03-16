@@ -11,6 +11,6 @@ class User < ApplicationRecord
   validates :furigana_first, presence: true
   validates :furigana_last, presence: true
   validates :birthdate, presence: true
-  devise :validatable, password_length: 6..128
+  devise :validatable, password_length: 7..128
 end
 

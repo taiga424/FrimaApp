@@ -38,5 +38,11 @@ feature "User" do
       expect(user.errors[:birthdate]).to include("can't be blank")
     end
 
+    it "is invalid " do
+      user = User.new(id: 1, nickname: "testuser", email: "test@test.com", first_name: "user", last_name: "test", furigana_first: "ユーザー", furigana_last: "テスト", birthdate: "1999/03/21", tell: 00000000000, created_at: 2020/03/16, updated_at: 2020/03/16, password: "0000000", password_confirmation: "0000000")
+      user.valid?
+      expect(user).to be_valid
+    end
+
   end
 end
