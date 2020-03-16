@@ -58,20 +58,6 @@ $(function(){
         fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
       }
 
-      // var inputs = $('#image-box').find('.js-file')
-      // console.log(inputs);
-      // inputs.each( function( num, input ){
-      // //nameの番号を更新するために、現在の番号を除去
-        
-      //   $(input).removeAttr('name');
-      //   $(input).attr({
-      //     name:"item[images_attributes][" + num + "][content][]",
-      //     // id:"item_images_attributes_" + num + "_content file"
-      //   });
-      //   num += 1;
-      //   // debugger;
-      // });
-
 
     });
 
