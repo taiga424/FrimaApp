@@ -16,7 +16,7 @@
           .itemList--body__details
             %ul
               %li
-                = item.price
+                = item.price.to_s + "円"
               %li
                 = icon('fas', 'star')
                 0
@@ -38,7 +38,7 @@
           .itemList--body__details
             %ul
               %li
-                = item.price
+                = item.price.to_s + "円"
               %li
                 = icon('fas', 'star')
                 0
