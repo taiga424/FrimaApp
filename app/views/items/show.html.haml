@@ -1,4 +1,7 @@
 = render partial: "header"
+.noticeContainer
+  -if flash.notice.present?
+    .alert.alert-success= flash.notice
 .show
   .show__main
     .content
@@ -38,7 +41,7 @@
               %button{type: "button", class:'item__delete'}
                 この商品を削除する
           -else
-            -if @item.customer_id.present?
+            -if @item.purchase_id.present?
               .item__purchase#item__purchase--sold
                 売り切れました
             -else 
@@ -119,7 +122,7 @@
               相手のことを考え丁寧なコメントを心がけましょう。
               不快な言葉遣いなどは利用制限や退会処分となることがあります。
             - if current_user
-              -if @item.customer_id.present?
+              -if @item.purchase_id.present?
                 = form_with(model: [@item, @comment], local: true) do |f|
                   = f.text_area :text, class: "comment-body", id: "comment-body--sold"
                   .comment-btn#comment-btn--sold

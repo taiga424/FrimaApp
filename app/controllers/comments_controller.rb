@@ -2,8 +2,11 @@ class CommentsController < ApplicationController
   
   def create
     @item = Item.find(params[:item_id])
-    Comment.create(comment_params)
-    redirect_to item_path(@item)
+    if Comment.create(comment_params)
+      redirect_to item_path(@item), notice: 'コメントされました'
+    else
+      render :show, notice: 'コメントの送信に失敗しました'
+    end
   end
 
   private
