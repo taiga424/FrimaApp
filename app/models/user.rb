@@ -12,9 +12,10 @@ class User < ApplicationRecord
   validates :furigana_last, presence: true
   validates :birthdate, presence: true
   devise :validatable, password_length: 7..128
-  
+
+  has_one :address
+
   has_many :items
   has_many :comments, dependent: :destroy
-
 end
 
