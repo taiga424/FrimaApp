@@ -14,6 +14,8 @@ class ItemsController < ApplicationController
     @shipping_day = Item.shipping_days.keys[@item.shipping_days-1]
     @area = Item.prefectures.keys[@item.area-1]
     @brand = Brand.find(@item.brand_id)
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)    
   end
 
   def confirm
@@ -53,7 +55,7 @@ class ItemsController < ApplicationController
     @brands = Brand.group(:name)
     @category_parent_array = ["指定なし"]
     Category.where(ancestry: nil).each do |parent|
-       @category_parent_array << parent.name
+      @category_parent_array << parent.name
     end
   end
 
