@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @user = User.find_by(id: @item.user_id)
     @images = Image.where(item_id: @item.id)
     @shipping_day = @item.shipping_days
     @area = @item.area
