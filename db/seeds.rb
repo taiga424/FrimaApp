@@ -83,7 +83,7 @@ Item.create!(
       purchase_id: 2,
       brand_id: 1,
       user_id: 1,
-      category_id: 194,
+      category_id: 33,
     },
     {
       name: 'ワンピース',
@@ -96,7 +96,7 @@ Item.create!(
       purchase_id: '',
       brand_id: 2,
       user_id: 1,
-      category_id: 98,
+      category_id: 78,
     },
     {
       name: '靴',
@@ -109,7 +109,7 @@ Item.create!(
       purchase_id: 2,
       brand_id: 3,
       user_id: 1,
-      category_id: 295,
+      category_id: 84,
     },
     {
       name: '子供服',
@@ -122,7 +122,7 @@ Item.create!(
       purchase_id: '',
       brand_id: 4,
       user_id: 2,
-      category_id: 110,
+      category_id: 153,
     },
     {
       name: 'スカート',
@@ -135,7 +135,7 @@ Item.create!(
       purchase_id: 1,
       brand_id: 5,
       user_id: 3,
-      category_id: 164,
+      category_id: 73,
     },
     {
       name: 'バッグ',
@@ -148,7 +148,7 @@ Item.create!(
       purchase_id: '',
       brand_id: 6,
       user_id: 4,
-      category_id: 198,
+      category_id: 83,
     },
   ]
 )
