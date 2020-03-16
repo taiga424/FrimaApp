@@ -62,7 +62,7 @@
               %span.need
                 必須
               %br/
-              = f.date_select :birthdate, autocomplete: "birthdate"
+              = f.date_select :birthdate, autocomplete: "birthdate",start_year: 1930,end_year: (Time.now.year - 10),default: Date.new(1989, 1, 1)
             .actions
               = f.submit "Next"
           = render "devise/shared/links"
