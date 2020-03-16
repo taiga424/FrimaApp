@@ -2,15 +2,12 @@ $(function(){
 
   $(document).on('turbolinks:load', function(){
 
-    // $('.price-wrapper__price').on('keyup', function(){
-
-    // });
  
-    // 選択された画像を取得し表示
+    
     $(document).on('change', '.js-file_group input', function(e) {
-      // index = $fileField.index();
+      
       var id = $('.img_field').attr('id').replace(/[^0-9]/g, '');
-      // $('#img_field').attr({id: `img_field--${id}`});
+      
       var file = e.target.files[0];
       var reader = new FileReader();
       var newImgId = `#img_field--${id}`;
