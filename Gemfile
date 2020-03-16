@@ -83,3 +83,4 @@ gem "jquery-rails"
 gem 'dotenv-rails'
 gem 'jquery-rails' 
 gem 'jquery-ui-rails'
+gem 'rspec-rails'

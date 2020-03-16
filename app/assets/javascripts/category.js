@@ -13,7 +13,7 @@ $(function(){
                           <select>
                         </div>
                       </div>`;
-    $('.wrapper.category-wrapper').append(childSelectHtml);
+    $('.category-wrapper-select').append(childSelectHtml);
   }
   function appendGrandchidrenBox(insertHTML){
     var grandchildSelectHtml = '';
@@ -25,7 +25,7 @@ $(function(){
                                 <select>
                               </div>
                             </div>`;
-    $('.wrapper.category-wrapper').append(grandchildSelectHtml);
+    $('#children_wrapper').append(grandchildSelectHtml);
   }
   $('#parent_category').on('change', function(){
     var parentCategory = document.getElementById('parent_category').value;

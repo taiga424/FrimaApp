@@ -30,7 +30,7 @@
   background-color: rgb(233, 230, 230);
   display: flex;
   width: auto;
-  padding: 120px;
+  padding: 100px 100px 60px 100px;
   .side-bar{
     width: 20%;
     height: 100vh;
@@ -114,27 +114,26 @@
       width: 100%;
       .category-wrapper-select{
         width: 70%;
-        #parent_category {
+        &__box {
           width: 100%;
-          height: auto;
+          #parent_category {
+            width: 100%;
+            height: 24px;
+          }
         }
       }
       #children_wrapper {
-        float: right;
         width: 100%;
-        text-align: right;
-        margin-right:32px ;
         #child_category {
-          width: 64%;
+          width: 100%;
+          height: 24px;
         }
       }
       #grandchildren_wrapper {
-        float: right;
         width: 100%;
-        text-align: right;
-        margin-right:32px ;
         #grandchild_category {
-          width: 64%;
+          width: 100%;
+          height: 24px;
         }
       }
     }
