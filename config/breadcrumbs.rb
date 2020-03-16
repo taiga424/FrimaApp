@@ -22,3 +22,17 @@ crumb :item_new do
   parent :root
 end
 
+crumb :item_show do
+  link "商品の詳細", item_path(:id)
+  parent :root
+end
+
+crumb :item_confirm do
+  link "購入の確認", confirm_item_path
+  parent :item_show
+end
+
+crumb :item_edit do
+  link "商品の編集", edit_item_path
+  parent :item_show
+end
