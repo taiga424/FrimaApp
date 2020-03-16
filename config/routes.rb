@@ -23,6 +23,8 @@ Rails.application.routes.draw do
       get 'confirm', to: 'items#confirm'
       post 'pay', to: 'items#pay'
       get 'done', to: 'items#done'
+      post   '/like/:item_id' => 'likes#like',   as: 'like'
+      delete '/like/:item_id' => 'likes#unlike', as: 'unlike'
     end
     collection do
       get 'get_category_children', defaults: { format: 'json' }
