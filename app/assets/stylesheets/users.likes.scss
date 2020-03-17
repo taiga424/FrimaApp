@@ -1,0 +1,55 @@
+.main{
+  height: 20px;
+  width: 78%;
+  &__group{
+    background-color: white;
+    margin-bottom: 40px;
+    padding: 10px;
+    &__title{
+      font-weight: bold;
+      background-color: white;
+    }
+  }
+  &__table{
+    background-color: white;
+    margin-bottom: 40px;
+    padding: 10px;
+    list-style: none;
+    background-color: white;
+    padding: 8px;
+    &__header{
+      background-color:lightgray;
+      border: solid 1px gray;
+      font-weight: bold;
+      padding: 8px;
+    }
+    &__list{
+      padding: 8px;
+      border: solid 1px gray;
+      li {
+        border-bottom: 1px solid #eee;
+        .main__table__list__item {
+          padding: 16px;
+          color: #333;
+          display: flex;
+          text-decoration: none;
+          figure {
+            overflow: hidden;
+            height: 48px;
+          }
+          &__body {
+            margin: 0 24px;
+            width: 100%;
+            &__text {
+              overflow: hidden;
+            }
+          }
+          i {
+            line-height: 48px;
+          }
+        }
+      }
+    }
+  }
+}
+

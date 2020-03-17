@@ -84,12 +84,7 @@
                 %th 発送日のめ目安
                 %td= @shipping_day
           .option
-            -# %ul.option__like
-            -#   %li.option__like-btn1
-            -#     %i ⭐️
-            -#     お気に入り 0
             = render partial: 'likes/like', locals: { item: @item }
-
             %ul.option__report
               %li.option__report-btn2
                 %i 🇯🇵
