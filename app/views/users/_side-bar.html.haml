@@ -1,0 +1,45 @@
+.side-bar
+  %section.side-bar__group
+    %h2.side-bar__group__title
+      マイページメニュー
+    %li.side-bar__group__list
+      = link_to "お知らせ", "#"
+    %li.side-bar__group__list
+      = link_to "いいねした商品", likes_users_path
+  %section.side-bar__group
+    %h2.side-bar__group__title
+      商品を出品する
+    %li.side-bar__group__list
+      = link_to "商品を出品する", "#"
+    %li.side-bar__group__list
+      = link_to "出品した商品", "#"
+    %li.side-bar__group__list
+      = link_to "自分のショップを見る", "#"
+  %section.side-bar__group
+    %h2.side-bar__group__title
+      商品を購入する
+    %li.side-bar__group__list
+      = link_to "購入した商品", "#"
+    %li.side-bar__group__list
+      = link_to "最近見た商品", "#"
+    %li.side-bar__group__list
+      = link_to "コメントした商品", "#"
+  %section.side-bar__group
+    %h2.side-bar__group__title
+      設定・ヘルプ・その他
+    %li.side-bar__group__list
+      = link_to "売上・ポイント管理", "#"
+    %li.side-bar__group__list
+      = link_to "クーポンの確認", "#"
+    %li.side-bar__group__list
+      = link_to "支払い情報", new_card_path
+    %li.side-bar__group__list
+      = link_to "設定", "#"
+    %li.side-bar__group__list
+      = link_to "お問い合わせ", "#"
+    %li.side-bar__group__list
+      = link_to "ラクマ公式ガイド", "#"
+    %li.side-bar__group__list
+      = link_to "はじめての方へ", "#"
+    %li.side-bar__group__list
+      = link_to "ログアウト", destroy_user_session_path, method: :delete

@@ -16,10 +16,17 @@
           .itemList--body__details
             %ul
               %li
-                = item.price.to_s + "円"
-              %li
-                = icon('fas', 'star')
-                0
+                = item.price
+              -if current_user.like_items.where(id: item.id).present?
+                %li.like
+                  .fas.fa-star
+                  .like-count
+                    =item.likes.count
+              -else 
+                %li.unlike
+                  .fas.fa-star
+                  .like-count
+                    =item.likes.count
             %p
               (税込)
     - else
@@ -38,9 +45,10 @@
           .itemList--body__details
             %ul
               %li
-                = item.price.to_s + "円"
-              %li
-                = icon('fas', 'star')
-                0
+                = item.price
+              %li.unlike
+                .fas.fa-star
+                .like-count
+                  =item.likes.count
             %p
               (税込)

@@ -391,6 +391,21 @@
                 ul {
                   display: flex;
                   justify-content: space-between;
+                  li.like {
+                    display: flex;
+                    color: #3CCACE;
+                    .fas.fa-star {
+                      line-height: 21px;
+                      padding-right: 5px;
+                    }
+                  }
+                  li.unlike {
+                    display: flex;
+                    .fas.fa-star {
+                      line-height: 21px;
+                      padding-right: 5px;
+                    }
+                  }
                 }
                 p {
                   font-size: 10px;
