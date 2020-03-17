@@ -156,27 +156,27 @@ Item.create!(
 Image.create!(
   [
     {
-      content: 'clothes1.jpeg',
+      content: open('clothes1.jpeg'),
       item_id: 1,
     },
     {
-      content: 'clothes3.jpeg',
+      content: open('clothes3.jpeg'),
       item_id: 2,
     },
     {
-      content: 'clothes4.jpeg',
+      content: open('clothes4.jpeg'),
       item_id: 3,
     },
     {
-      content: 'clothes5.jpeg',
+      content: open('clothes5.jpeg'),
       item_id: 4,
     },
     {
-      content: 'clothes6.jpeg',
+      content: open('clothes6.jpeg'),
       item_id: 5,
     },
     {
-      content: 'clothes7.jpeg',
+      content: open('clothes7.jpeg'),
       item_id: 6,
     },
   ]
