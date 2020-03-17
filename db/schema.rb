@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 2020_03_16_092642) do
     t.string "name", null: false
     t.text "description", null: false
     t.integer "price", null: false
-    t.string "image", null: false
     t.integer "condition", null: false
     t.integer "fee", null: false
     t.string "area", null: false
