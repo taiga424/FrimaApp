@@ -1,4 +1,4 @@
-class Item < ApplicationRecord
+class Item < ApplicationRecord 
   enum condition: {
     '新品、未使用':1, '未使用に近い':2, '目立った傷や汚れなし':3, 'やや傷や汚れあり':4, '傷や汚れあり':5, '全体的に状態が悪い':6 
   }
@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   }
   
   
-  enum shipping_day: {
+  enum shipping_days: {
     '１〜２日後に発送':1,  '２〜３日後に発送':2,  '４〜７日後に発送':3
   }
   
@@ -21,9 +21,10 @@ class Item < ApplicationRecord
 
   belongs_to :brand, optional: true
   belongs_to :user, optional: true
-  has_many :images, dependent: :destroy
   has_many :comments, dependent: :destroy
-  belongs_to :category,  optional: true
+  belongs_to :category, optional: true
+  has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images
   has_many :likes, dependent: :destroy
   has_many :liking_users, through: :likes, source: :user
 end
