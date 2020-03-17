@@ -16,7 +16,7 @@
               .swiper-container.swiper1
                 .swiper-wrapper
                   - @images.each do |images|
-                    = image_tag images[:content], class:"swiper-slide"
+                    = image_tag asset_path(images[:content]), class:"swiper-slide"
                 .swiper-button-prev.prev1
                 .swiper-button-next.next1
                 .swiper-pagination
@@ -24,7 +24,7 @@
               .swiper-container.swiper2
                 .swiper-wrapper
                   - @images.each do |images|
-                    = image_tag images[:content], class:"swiper-slide"
+                    = image_tag asset_path(images[:content]), class:"swiper-slide"
           .item__price 
             %span 
               = @item.price 
