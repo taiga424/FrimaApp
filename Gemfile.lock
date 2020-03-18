@@ -371,8 +371,8 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
-  fog-aws
   factory_bot_rails
+  fog-aws
   font-awesome-sass
   gretel
   haml-rails (>= 1.0, <= 2.0.1)

@@ -76,7 +76,6 @@ $(function(){
         alert('カテゴリー取得に失敗しました');
       })
     }else{
-      // $('#children_wrapper').remove();
       $('#grandchildren_wrapper').remove();
     }
   });

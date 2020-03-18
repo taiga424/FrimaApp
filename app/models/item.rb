@@ -34,4 +34,6 @@ class Item < ApplicationRecord
     Item.where(['name LIKE ?', "%#{search}%"])
   end
 
+  validates :name, :description, :price, :area, :condition, :fee, :shipping_days, presence: true
+  
 end
