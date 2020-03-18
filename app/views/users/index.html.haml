@@ -14,13 +14,35 @@
         = link_to "住所の設定を行ってください", "#"
     %section.main__table
       %h2.main__table__header
-        購入した商品
-      %li.main__table__list
-        222を購入しました
+        商品購入
+      %ul.main__table__list
+        - @items_purchase.each do |item|
+          %li
+            =link_to item_path(item), class: "main__table__list__item" do
+              %figure 
+                = image_tag asset_path(item.images[0].content), :size =>'48x64'
+              .main__table__list__item__body
+                .main__table__list__item__body__text
+                = item.name
+                %br
+                = item.price
+                円
+              %i.fas.fa-chevron-right
     %section.main__table
       %h2.main__table__header
         出品した商品
-      %li.main__table__list
-        222を出品しました
+      %ul.main__table__list
+        - @items_new.each do |item|
+          %li
+            =link_to item_path(item), class: "main__table__list__item" do
+              %figure 
+                = image_tag asset_path(item.images[0].content), :size =>'48x64'
+              .main__table__list__item__body
+                .main__table__list__item__body__text
+                = item.name
+                %br
+                = item.price
+                円
+              %i.fas.fa-chevron-right
 = render partial: "items/footer"
 

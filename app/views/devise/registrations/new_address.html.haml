@@ -16,13 +16,14 @@
               %br/
               = f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", class: "imput-box"
 
+
             .field
               = f.label :都道府県, class:'label-weight'
               %span.need
                 必須
               %br/
-              = f.text_field  :prefecture, autofocus: true, autocomplete: "prefecture", class: "imput-box"
-       
+              = f.select :prefecture , Item.prefectures, {prompt: 1, selected: 1}, class: "imput-box", required: "required"
+        
             .field
               = f.label :住所, class:'label-weight'
               %span.need
