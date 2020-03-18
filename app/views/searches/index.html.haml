@@ -1,0 +1,24 @@
+= render partial: "items/header"
+
+.search
+  .search__left
+  .search__right
+    %section.itemsBox
+      -if @search.present?
+        %h2.searchResult-head
+          = @search
+          %span.searchResult--head__text
+            の検索結果
+        .searchResult-num
+          ="1-#{@items.count}件表示"
+      -else
+        %h2.searchResult-nil
+          検索結果
+        %p.searchResult-nil-text
+          該当する商品が見つかりません。商品は毎日増えていますので、これからの出品に期待してください。
+        %h2.searchResult-new
+          新着商品
+      .newContent
+        = render 'items/item', items: @items
+
+= render partial: "items/footer"

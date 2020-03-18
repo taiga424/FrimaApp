@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :searches, only:[:index]
+
   resources :items, only:[:show, :new, :create, :edit, :destroy] do
     member do
       get 'confirm', to: 'items#confirm'

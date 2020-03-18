@@ -4,11 +4,11 @@
       .header__headerBox__headerMain__logo
         = link_to image_tag('logo.png'), root_path
       .header__headerBox__headerMain__searchForm
-        %form
-          %input{ placeholder: "キーワードから探す"}
+        = form_tag( searches_path, method: :get, class: "searchBox" ) do
+          = text_field_tag :search, "", placeholder:"何かお探しですか？", class: "searchBox__text"
           %button{type: "submit"}
             .btnIcon
-              = image_tag "icon-search 1.png"   
+              = image_tag "icon-search 1.png"
     .header__headerBox__nav
       %ul.header__headerBox__nav__leftMenu
         %li.header__headerBox__nav__leftMenu__list--first
