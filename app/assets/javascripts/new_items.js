@@ -1,9 +1,6 @@
 $(function(){
 
-  $(document).on('turbolinks:load', function(){
-
- 
-    
+  $(window).on('load', function(){
     $(document).on('change', '.js-file_group input', function(e) {
       
       var id = $('.img_field').attr('id').replace(/[^0-9]/g, '');
