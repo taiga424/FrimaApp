@@ -19,14 +19,14 @@
       &__searchForm {
         width: 100%;
         margin-left: auto;
-        form {
+        .searchBox {
           width: 100%;
           display: flex;
-          input {
+          &__text {
             width: 100%;
             padding: 0 0 0 5px;
           }
-          button {
+        button {
             width: 35px;
             border: 0;
             padding: 7px;
@@ -35,7 +35,7 @@
             .btnIcon {
               img {
                 width: 20px;
-                height: 20px;
+                height: 21px;
               }
             }
           }
@@ -319,6 +319,7 @@
         overflow-x: auto;
 	      white-space: nowrap;
         &__itemList {
+          margin: 20px 20px 20px 0;
           list-style: none;
           margin-right: 20px;
           display: inline-block;

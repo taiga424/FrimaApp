@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def index
-    @items = Item.all.limit(12)
+    @items = Item.all.limit(12).order("id DESC")
     @images = Image.all
     @image = @images.where(item_id: @items.ids)
   end

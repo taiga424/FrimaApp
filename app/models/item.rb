@@ -27,4 +27,11 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images
   has_many :likes, dependent: :destroy
   has_many :liking_users, through: :likes, source: :user
+  belongs_to :category,  optional: true
+
+  def self.search(search)
+    return Item.all unless search 
+    Item.where(['name LIKE ?', "%#{search}%"])
+  end
+
 end
