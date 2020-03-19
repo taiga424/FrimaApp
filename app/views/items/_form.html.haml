@@ -52,7 +52,7 @@
               = i.label :content, class: "image-wrapper__image-box__js__label" do
                 .image-wrapper__image-box__js__label__image.img_field{id: "img_field--#{i.index}", onClick: "$('#file').click()"}
                   - if @item.images[i.index][:content].present?
-                    = image_tag(f.image.content)
+                    = image_tag asset_path(@images[i.index].content)
                   - else
                     = image_tag 'icon_camera.png', class: "image-wrapper__image-box__js__label__image__url" 
                 = i.file_field :content, class: "image-wrapper__image-box__js__label__file js-file", id: "item_images_attributes_#{i.index}_content"
@@ -83,12 +83,14 @@
             .category-wrapper-select
               .category-wrapper-select__box
                 = f.select :parent_name, @category_parent_array, {}, {class: 'category-wrapper__category form-control', id: 'parent_category'}
+                -# = f.select :child_id, @category_children_array, {selected: @child_category.name}, {class: "category-wrapper__category form-control", id: "child_category"} 
+                -# = f.select :category_id, @category_grandchildren_array, {selected: @grandchild_category.name}, {class: "category-wrapper__category form-control", id: "grandchild_category"} 
 
 
       .wrapper.brand-wrapper
         %label.wrapper__label
           ブランド：
-          = f.select :brand_id, options_for_select(@brands.map{|b| [b.name, b.id, {}]}), {prompt: "指定なし"}, class: "brand-wrapper__brand form-control"
+          = f.select :brand_id, options_for_select(@brands.map{|b| [b.name, b.id, {}]}, {prompt: "指定なし", selected: @item.brand_id}), {}, class: "brand-wrapper__brand form-control"
           
       .wrapper.condition-wrapper
         %label.wrapper__label

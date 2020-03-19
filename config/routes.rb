@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :items, only:[:show, :new, :create, :edit, :destroy] do
+  resources :items, only:[:show, :new, :create, :destroy] do
     member do
       get 'confirm', to: 'items#confirm'
       post 'pay', to: 'items#pay'
@@ -39,6 +39,14 @@ Rails.application.routes.draw do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
+  end
+
+  resources :items, only:[:edit] do
+    member do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+    
   end
 
   resources :items do
