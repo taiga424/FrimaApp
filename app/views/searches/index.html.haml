@@ -1,7 +1,8 @@
-= render partial: "items/header"
 
+= render partial: "items/header"
 .search
   .search__left
+    = render 'searches/form-bar'
   .search__right
     %section.itemsBox
       -if @search.present?
@@ -20,5 +21,5 @@
           新着商品
       .newContent
         = render 'items/item', items: @items
-
+        
 = render partial: "items/footer"
