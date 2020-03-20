@@ -60,6 +60,7 @@
                 = f.label :remember_me
             .actions
               = f.submit "Log in",class: 'submit-form'
-            = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post
+            - if Rails.env.development?
+              = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post
           = render "devise/shared/links"
 = render partial: "items/footer"

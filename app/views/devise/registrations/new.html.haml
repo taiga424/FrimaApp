@@ -68,7 +68,8 @@
               = f.date_select :birthdate, autocomplete: "birthdate",start_year: 1930,end_year: (Time.now.year - 10),default: Date.new(1989, 1, 1)
             .actions
               = f.submit "Next"
-            = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post
+            - if Rails.env.development?
+              = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post
           = render "devise/shared/links"
 = render partial: "items/footer"
 
