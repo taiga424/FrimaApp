@@ -55,6 +55,7 @@ Rails.application.configure do
   config.assets.precompile += ['items/*.js']
 
   config.assets.precompile += ['cable.js']
+  config.assets.precompile += ['application.js']
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
