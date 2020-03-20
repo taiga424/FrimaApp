@@ -79,7 +79,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    # @category = Category.roots
     @images = @item.images
     @brands = Brand.all
     @grandchild_category = @item.category
