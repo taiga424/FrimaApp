@@ -87,9 +87,25 @@ $(function(){
 
   
   // 複数画像
-  $(document).on('change', function(){
-    console.log('OK')
+  $(window).on('load', function(){
+    var fileIndex = [1,2,3,4,5,6,7,8,9,10];
+    var previewCount = $('.preview').length;
+    // for (var i=0; i<previewCount; i++){
+    //   fileIndex.shift();
+    //   fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+    // }
+    lastIndex = $('.js-file_group:last').data('index');
+    fileIndex.splice(0, lastIndex);
+
+
     $(document).on('change', '.js-file_group input', function(e) {
+      console.log('OK')
+      $('.preview').parent().removeClass("img_field");
+      // var newBox = $('.img_field').siblings('input:hidden input[value=""]');
+      // var id = newBox.attr('id').replace(/[^0-9]/g, '');
+      // var previewCount = $('.preview').length
+      // var imgFieldId = `#img_field--${previewCount}`; 
+      // var id = $(imgFieldId).attr('id').replace(/[^0-9]/g, '');
       var id = $('.img_field').attr('id').replace(/[^0-9]/g, '');
       var file = e.target.files[0];
       var reader = new FileReader();
@@ -120,7 +136,7 @@ $(function(){
                       </div>
                       <input class="image-wrapper__image-box__js__label__file js-file" id="item_images_attributes_${index}_content" type="file" name="item[images_attributes][${index}][content]">
                     </label>
-                    <div class="js-remove">
+                    <div class="js-remove" data-remove="${index}">
                       <span class="js-remove__text">
                         削除
                       </span> 
@@ -131,10 +147,9 @@ $(function(){
 
 
 
-    var fileIndex = [1,2,3,4,5,6,7,8,9,10];
+    // var fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
     $('#image-box').on('change', '.js-file', function(e){
-      var previewCount = $('.preview').length
       if( previewCount < 9 || $('#default-img').length == 0) {
         $('#image-box').append(buildFileField(fileIndex[0]));
         fileIndex.shift();
@@ -142,9 +157,19 @@ $(function(){
       }
     });
 
+    const buildDeleteField = function(index, id){
+      html = `<input value="${id}" type="hidden" name="item[images_attributes][_destroy][]" id="item_images_attributes__destroy_[]">`
+      return html;
+    }
+
     $('#image-box').on('click', '.js-remove', function(){
       console.log('OK')
+      var removeId = $(this).data('remove');
+      var removeIndex = $(this).parent().data('index')
+      $('#image-box').append(buildDeleteField(removeIndex,removeId))
       $(this).parent().remove();
+      // $('js-file_group input="hidden"').remove();
+      
       if ($('.js-file').length == 0 || $('#default-img').length == 0){
         $('#image-box').append(buildFileField(fileIndex[0]));
       };

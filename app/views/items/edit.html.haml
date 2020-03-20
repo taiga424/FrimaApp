@@ -53,14 +53,14 @@
           = f.fields_for :images do |i|
             .image-wrapper__image-box__js.js-file_group{data:{index: "#{i.index}"}}
               = i.label :content, class: "image-wrapper__image-box__js__label" do
-                .image-wrapper__image-box__js__label__image.img_field{id: "img_field--#{i.index}", onClick: "$('#file').click()"}
+                .image-wrapper__image-box__js__label__image.img_field{id: "img_field--#{i.index}", data:{image: "#{i.index}"}, onClick: "$('#file').click()"}
                   - if @item.images[i.index][:content].present?
-                    = image_tag asset_path(@images[i.index].content)
+                    = image_tag asset_path(@images[i.index].content), width: "100%", height: "100%", class: "preview"
                   - else
                     = image_tag 'icon_camera.png', class: "image-wrapper__image-box__js__label__image__url" 
-                = i.file_field :content, class: "image-wrapper__image-box__js__label__file js-file", id: "item_images_attributes_#{i.index}_content"
+                = i.file_field :content, class: "image-wrapper__image-box__js__label__file js-file"
                 = i.hidden_field :id, value: "#{@item.images[i.index].id}"
-              .js-remove
+              .js-remove{data:{remove: "#{@images[i.index].id}"}}
                 %span.js-remove__text
                   削除
       
@@ -89,11 +89,9 @@
                 = f.select :parent_name, @category_parent_array, {selected: @parent_category.name}, {class: 'category-wrapper__category form-control', id: 'parent_category'}
             #children_wrapper.category-wrapper-select
               .category-wrapper-select__box
-                -# = f.select :child_id, @category_children_array, {selected: @child_category.name}, {class: "category-wrapper__category form-control", id: "child_category", style:"width: 100%; height: 24px;"}
                 = f.select :child_id, options_for_select(@category_children_array.map{|c| [c.name, c.id, {data:{category: c.id}}]}, {selected: @child_category.id}), {}, {class: "category-wrapper__category form-control", id: "child_category", style:"width: 100%; height: 24px;"}
             #grandchildren_wrapper.category-wrapper-select
               .category-wrapper-select__box
-                -# = f.select :category_id, @category_grandchildren_array, {selected: @grandchild_category.name}, {class: "category-wrapper__category form-control", id: "grandchild_category", style:"width: 100%; height: 24px;"} 
                 = f.select :category_id, options_for_select(@category_grandchildren_array.map{|g| [g.name, g.id, {data:{category: g.id}}]}, {selected: @grandchild_category.id}), {}, {class: "category-wrapper__category form-control", id: "grandchild_category", style:"width: 100%; height: 24px;"}
 
       .wrapper.brand-wrapper
@@ -138,6 +136,6 @@
           = f.number_field :price, class: "price-wrapper__price form-control", required: "required"
 
       .wrapper.submit-wrapper
-        = f.submit "出品する", class: "btn submit-wrapper__submit-btn"
+        = f.submit "変更して保存する", class: "btn submit-wrapper__submit-btn"
 = render partial: "footer"
 = javascript_include_tag 'items/edit.js'

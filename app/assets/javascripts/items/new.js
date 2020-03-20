@@ -85,7 +85,7 @@ $(function(){
   });
 
 
-  // 新規投稿
+  // 画像複数投稿
 
   $(window).on('load', function(){
     $(document).on('change', '.js-file_group input', function(e) {

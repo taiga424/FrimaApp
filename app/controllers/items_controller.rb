@@ -105,13 +105,21 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update(item_params)
-    if @item.save 
-      # @images = @item.images.update
+    deleteImages = params[:item][:images_attributes][:_destroy]
+    # @images = @item.images.update(item_params)
+    if deleteImages != nil
+      deleteImages.each do|image_id|
+        image = @item.images.find(image_id)
+        image.destroy
+      end
+    end
+    if @item.update(item_params)
+      # @item.images.update(item_params)
+      # Image.destroy(deletedImages)
       redirect_to item_path(@item)
     else
       flash.now[:alert] = '画像を１枚以上添付してください'
-      render :new
+      render :edit
     end
 
   end
@@ -137,7 +145,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(
       :name, :description, :price, :brand_id, :area, :condition, :fee, :category_id,
       :shipping_days, images_attributes: [:content, :id, :_destroy]
-      ).merge(user_id: current_user.id, brand_id: params[:item][:brand_id])
+      ).merge(user_id: current_user.id)
   end
 
   
