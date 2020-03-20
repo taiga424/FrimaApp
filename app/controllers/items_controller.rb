@@ -105,20 +105,14 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update(item_params)
-    @images = @item.images
-    # deleteImage = @images.where(params[_destroy: 1])
-    # deleteImage.each do |i|
-    #   i.destroy
-    # end
     
-      # @item.images.update(item_params)
-      # Image.destroy(deletedImages)
-    redirect_to item_path(@item)
-    # else
-    #   flash.now[:alert] = '画像を１枚以上添付してください'
-    #   redirect_to edit_item_path(@item)
-    # end
+    if @item.update(item_params)
+      @images = @item.images
+      redirect_to item_path(@item)
+    else
+      flash.now[:alert] = '画像を１枚以上添付してください'
+      redirect_to edit_item_path(@item)
+    end
 
   end
 
