@@ -17,6 +17,7 @@
             %ul
               %li
                 = item.price
+                %span 円
               -if current_user.like_items.where(id: item.id).present?
                 %li.like
                   .fas.fa-star
@@ -46,6 +47,7 @@
             %ul
               %li
                 = item.price
+                %span 円
               %li.unlike
                 .fas.fa-star
                 .like-count
