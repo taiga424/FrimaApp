@@ -1,4 +1,5 @@
 .search {
+  padding: 50px;
   width: 100%;
   height: 100vh;
   min-height: 1000px;
@@ -6,11 +7,109 @@
   display: flex;
   &__left {
     width: 25%;
+    .detail_search{
+    
+      .item_search{
+        .detail_search_sort{
+          height: 70px;
+          .select-order{  
+            border: 1px solid;
+            height: 48px;
+            padding: 0 16px;
+  
+            width: 260px;
+        
+          }
+        }
+        .detail_search_form{
+          padding: 10px;
+
+          background-color: white;
+          width: 260px;
+          .text{
+            font-size: 20px;
+            padding-left: 10px;
+            font-weight: bold;
+          }
+          .text-box{    
+            margin-left: 10px;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            margin-bottom: 10px;
+          }
+          .detail_search__title{
+            padding-bottom: 10px;
+            font-size: 25px;
+            padding-top: 5px;
+            text-align: center;
+            font-weight: bold;
+          }
+          .detail_search__group{
+            .detail_search__group--checkbox{
+              padding-left: 10px;
+
+            }
+          }
+          .detail_search__btns{
+            text-align: center;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+              a {
+                background: #aaa;
+                border: 1px solid #aaa;
+                color: #fff;
+                display: block;
+                line-height: 48px;
+                width: 48%;
+                font-size: 14px;
+                border: 1px solid transparent;
+                -webkit-transition: all ease-out .3s;
+                transition: all ease-out .3s;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+
+              }
+            
+                .submit-botton{
+                  display: block;
+                  width: 48%;
+                  line-height: 48px;
+                  font-size: 14px;
+                  border: 1px solid transparent;
+                  -webkit-transition: all ease-out .3s;
+                  transition: all ease-out .3s;
+                  cursor: pointer;
+                  text-align: center;
+                  background: #3CCACE;
+                  border: 1px solid#3CCACE;
+                  color: #fff;
+                  
+                }
+              
+
+            
+          }
+
+
+        }
+       
+      }
+    }
   }
   &__right {
     width: 75%;
     .itemsBox {
-      padding: 50px 20px;
+
       .searchResult-head {
         font-size: 23px;
         font-weight: bolder;

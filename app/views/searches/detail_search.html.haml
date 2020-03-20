@@ -1,0 +1,20 @@
+= render partial: "items/header"
+.search
+  .search__left
+    = render 'searches/form-bar'
+  .search__right
+    %section.itemsBox
+      -if @search.present?
+        %h2.search-result-head
+          =@search
+          %span.search-result-head-text
+            の検索結果
+        .search-result-number
+          ="1-#{@items.count}件表示"
+      -else
+        %h2.search-result-nil
+          検索結果
+        .search-result-number
+          ="1-#{@items.count}件表示"
+          .items-box-content
+            =render 'items/item', items: @items
