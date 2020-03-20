@@ -38,4 +38,6 @@ class Item < ApplicationRecord
   belongs_to :category,  optional: true
 
 
+  validates :name, :description, :price, :area, :condition, :fee, :shipping_days, presence: true
+  
 end

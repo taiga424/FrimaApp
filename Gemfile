@@ -51,6 +51,8 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -83,9 +85,12 @@ gem 'payjp'
 gem "jquery-rails"
 gem 'dotenv-rails' 
 gem 'jquery-ui-rails'
-gem 'rspec-rails'
 gem 'carrierwave'
 
 gem 'rails-controller-testing'
 gem 'factory_bot_rails'
 gem 'ransack'
+gem 'thin'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem "omniauth-rails_csrf_protection"

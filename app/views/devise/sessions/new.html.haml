@@ -1,3 +1,42 @@
+:javascript
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '168638170767542',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v6.0'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+  
+  FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+  });
+
+  {
+      status: 'connected',
+      authResponse: {
+          accessToken: '...',
+          expiresIn:'...',
+          signedRequest:'...',
+          userID:'...'
+      }
+  }
+#fb-root
+  %script{:async => "", :crossorigin => "anonymous", :defer => "defer", :src => "https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v6.0&appId=168638170767542&autoLogAppEvents=1"}
+
+
 = render partial: "items/header"
 .single-container
   .single-container__single-main
@@ -21,5 +60,7 @@
                 = f.label :remember_me
             .actions
               = f.submit "Log in",class: 'submit-form'
+            - if Rails.env.development?
+              = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post
           = render "devise/shared/links"
 = render partial: "items/footer"

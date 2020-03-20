@@ -20,27 +20,30 @@
                 必須
               %br/
               = f.email_field :email, autofocus: true, autocomplete: "email", class: "imput-box"
-            .field
-              = f.label :パスワード, class:'label-weight'
-              - if @minimum_password_length
-                %em
-                  (#{@minimum_password_length} 文字以上)
-                  %span.need
-                    必須
-              %br/
-              = f.password_field :password, autocomplete: "new-password", class: "imput-box"
-            .field
-              = f.label :パスワード（確認）, class:'label-weight', class:'label-weight'
-              %span.need
-                必須
-              %br/
-              = f.password_field :password_confirmation, autocomplete: "new-password", class: "imput-box"
-              .confirm
-                ※本人確認
-                .confirm__sentence
-                  安心・安全にご利用いただくために、お客さまの本人情報の登録
-                  %br/
-                  にご協力ください。他のお客さまに公開されることはありません。
+            - if @sns_id.present?
+              = hidden_field_tag :sns_auth, true
+            - else
+              .field
+                = f.label :パスワード, class:'label-weight'
+                - if @minimum_password_length
+                  %em
+                    (#{@minimum_password_length} 文字以上)
+                    %span.need
+                      必須
+                %br/
+                = f.password_field :password, autocomplete: "new-password", class: "imput-box"
+              .field
+                = f.label :パスワード（確認）, class:'label-weight', class:'label-weight'
+                %span.need
+                  必須
+                %br/
+                = f.password_field :password_confirmation, autocomplete: "new-password", class: "imput-box"
+                .confirm
+                  ※本人確認
+                  .confirm__sentence
+                    安心・安全にご利用いただくために、お客さまの本人情報の登録
+                    %br/
+                    にご協力ください。他のお客さまに公開されることはありません。
             .field
               = f.label :お名前（全角）, class:'label-weight'
               %span.need
@@ -65,6 +68,8 @@
               = f.date_select :birthdate, autocomplete: "birthdate",start_year: 1930,end_year: (Time.now.year - 10),default: Date.new(1989, 1, 1)
             .actions
               = f.submit "Next"
+            - if Rails.env.development?
+              = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post
           = render "devise/shared/links"
 = render partial: "items/footer"
 
