@@ -1,4 +1,12 @@
 class Item < ApplicationRecord 
+
+
+  def self.search(search)
+    return Item.all unless search
+    Item.where(['name LIKE ?', "%#{search}%"])
+  end
+
+
   enum condition: {
     '新品、未使用':1, '未使用に近い':2, '目立った傷や汚れなし':3, 'やや傷や汚れあり':4, '傷や汚れあり':5, '全体的に状態が悪い':6 
   }
@@ -29,9 +37,7 @@ class Item < ApplicationRecord
   has_many :liking_users, through: :likes, source: :user
   belongs_to :category,  optional: true
 
-  def self.search(search)
-    return Item.all unless search 
-    Item.where(['name LIKE ?', "%#{search}%"])
-  end
 
+  validates :name, :description, :price, :area, :condition, :fee, :shipping_days, presence: true
+  
 end

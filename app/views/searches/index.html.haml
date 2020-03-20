@@ -2,6 +2,7 @@
 
 .search
   .search__left
+    =render "searches/form-bar"
   .search__right
     %section.itemsBox
       -if @search.present?

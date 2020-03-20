@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
+    omniauth_callbacks: 'users/omniauth_callbacks' 
   }
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
@@ -19,7 +20,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :searches, only:[:index]
+  resources :searches, only:[:index] do
+    collection do
+      get :detail_search
+    end
+  end
+
 
   resources :items, only:[:show, :new, :create, :edit, :destroy] do
     member do

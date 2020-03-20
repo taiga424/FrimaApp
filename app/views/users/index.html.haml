@@ -31,6 +31,7 @@
     %section.main__table
       %h2.main__table__header
         出品した商品
+
       %ul.main__table__list
         - @items_new.each do |item|
           %li
@@ -45,4 +46,5 @@
                 円
               %i.fas.fa-chevron-right
 = render partial: "items/footer"
+
 
