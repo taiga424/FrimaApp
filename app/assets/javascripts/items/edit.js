@@ -90,15 +90,12 @@ $(function(){
   $(window).on('load', function(e){
     var fileIndex = [1,2,3,4,5,6,7,8,9,10];
     var previewCount = $('.preview').length;
-
-    console.log('OK1');
     lastIndex = $('.js-file_group:last').data('index');
     fileIndex.splice(0, lastIndex);
     $('.hidden-destroy').hide();
 
 
     $(document).on('change', '.js-file_group input', function(e) {
-      console.log('OK2')
       $('.preview').parent().removeClass("img_field");
       var id = $('.img_field').attr('id').replace(/[^0-9]/g, '');
       var file = e.target.files[0];
@@ -141,7 +138,6 @@ $(function(){
 
 
     $('#image-box').on('change', '.js-file', function(e){
-      console.log('OK4');
       if( previewCount < 9 || $('#default-img').length == 0) {
         $('#image-box').append(buildFileField(fileIndex[0]));
         fileIndex.shift();
@@ -150,14 +146,12 @@ $(function(){
     });
 
     $('#image-box').on('click', '.js-remove', function(){
-      console.log('OK3')
       const targetIndex = $(this).parent().data('index');
       const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
       if (hiddenCheck){ 
         hiddenCheck.prop('checked', true);
       }
       $(this).parent().remove();
-      
       if ($('.js-file').length == 0 || $('#default-img').length == 0){
         $('#image-box').append(buildFileField(fileIndex[0]));
       };
