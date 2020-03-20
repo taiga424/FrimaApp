@@ -32,7 +32,7 @@ class Item < ApplicationRecord
   has_many :comments, dependent: :destroy
   belongs_to :category, optional: true
   has_many :images, dependent: :destroy
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images, allow_destroy: true
   has_many :likes, dependent: :destroy
   has_many :liking_users, through: :likes, source: :user
   belongs_to :category,  optional: true

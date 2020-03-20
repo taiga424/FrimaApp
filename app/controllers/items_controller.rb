@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :destroy, :pay, :confirm, :done]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :pay, :confirm, :done]
 
   require 'payjp'
 
@@ -58,7 +58,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @brands = Brand.all
-    
     @category_parent_array = ["指定なし"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
@@ -80,6 +79,40 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @images = @item.images
+    @brands = Brand.all
+    @grandchild_category = @item.category
+    @child_category = @grandchild_category.parent 
+    @parent_category = @child_category.parent
+
+    @category_parent_array = ["指定なし"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    @category_children_array = []
+    Category.where(ancestry: @child_category.ancestry).each do |child|
+      @category_children_array << child
+    end
+
+    @category_grandchildren_array = []
+    Category.where(ancestry: @grandchild_category.ancestry).each do |grandchild|
+      @category_grandchildren_array << grandchild
+    end
+  
+    @item.images.build
+  end
+
+  def update
+    
+    if @item.update(item_params)
+      @images = @item.images
+      redirect_to item_path(@item)
+    else
+      flash.now[:alert] = '画像を１枚以上添付してください'
+      redirect_to edit_item_path(@item)
+    end
+
   end
 
   def destroy
@@ -101,9 +134,9 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(
-      :name, :description, :price, :brand_id, :area, :condition, :fee,
+      :name, :description, :price, :brand_id, :area, :condition, :fee, :category_id,
       :shipping_days, images_attributes: [:content, :id, :_destroy]
-      ).merge(user_id: current_user.id, category_id: params[:category_id], brand_id: params[:item][:brand_id])
+      ).merge(user_id: current_user.id)
   end
 
   
