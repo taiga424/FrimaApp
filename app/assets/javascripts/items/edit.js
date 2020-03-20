@@ -88,34 +88,8 @@ $(function(){
   
   // 複数画像
   $(window).on('load', function(e){
-    // var id = $('.img_field').attr('id').replace(/[^0-9]/g, '');
-    // var file = e.target.files[0];
-    // var reader = new FileReader();
-    // var newImgId = `#img_field--${id}`;
-    // var preview = $(newImgId);
-    // preview.attr({id: `img_field--${id}`});
-    // reader.onload = (function(file) {
-    //   return function(e) {
-    //     preview.empty();
-    //     preview.append($('<img>').attr({
-    //       src: e.target.result,
-    //       width: "100px",
-    //       height: "100%",
-    //       class: "preview",
-    //       title: file.name
-    //     }));
-    //   };
-    // })(file);
-    // preview.removeClass('img_field');
-    // reader.readAsDataURL(file);
-
-
     var fileIndex = [1,2,3,4,5,6,7,8,9,10];
     var previewCount = $('.preview').length;
-    // for (var i=0; i<previewCount; i++){
-    //   fileIndex.shift();
-    //   fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-    // }
 
     console.log('OK1');
     lastIndex = $('.js-file_group:last').data('index');
@@ -126,11 +100,6 @@ $(function(){
     $(document).on('change', '.js-file_group input', function(e) {
       console.log('OK2')
       $('.preview').parent().removeClass("img_field");
-      // var newBox = $('.img_field').siblings('input:hidden input[value=""]');
-      // var id = newBox.attr('id').replace(/[^0-9]/g, '');
-      // var previewCount = $('.preview').length
-      // var imgFieldId = `#img_field--${previewCount}`; 
-      // var id = $(imgFieldId).attr('id').replace(/[^0-9]/g, '');
       var id = $('.img_field').attr('id').replace(/[^0-9]/g, '');
       var file = e.target.files[0];
       var reader = new FileReader();
@@ -180,11 +149,6 @@ $(function(){
       }
     });
 
-    // const buildDeleteField = function(index, id){
-    //   html = `<input value="${id}" type="hidden" name="item[images_attributes][_destroy][]" id="item_images_attributes__destroy_[]">`
-    //   return html;
-    // }
-
     $('#image-box').on('click', '.js-remove', function(){
       console.log('OK3')
       const targetIndex = $(this).parent().data('index');
@@ -192,11 +156,7 @@ $(function(){
       if (hiddenCheck){ 
         hiddenCheck.prop('checked', true);
       }
-      // var removeId = $(this).data('remove');
-      // var removeIndex = $(this).parent().data('index')
-      // $('#image-box').append(buildDeleteField(removeIndex,removeId))
       $(this).parent().remove();
-      // $('js-file_group input="hidden"').remove();
       
       if ($('.js-file').length == 0 || $('#default-img').length == 0){
         $('#image-box').append(buildFileField(fileIndex[0]));
