@@ -8,18 +8,14 @@ class SearchesController < ApplicationController
   end
   
   def detail_search
-    # binding.pry
     @search_item = Item.ransack(params[:q]) 
     @items = @search_item.result
   end
 
 private
 
-
   def set_ransack
     @q = Item.ransack(params[:q])
   end
-
-
 
 end
