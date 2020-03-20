@@ -4,6 +4,9 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def index
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true)
+    
     @items = Item.all.limit(12).order("id DESC")
     @images = Image.all
     @image = @images.where(item_id: @items.ids)

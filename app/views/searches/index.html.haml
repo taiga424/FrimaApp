@@ -2,6 +2,7 @@
 
 .search
   .search__left
+    =render "searches/form-bar"
   .search__right
     %section.itemsBox
       -if @search.present?
@@ -22,3 +23,11 @@
         = render 'items/item', items: @items
 
 = render partial: "items/footer"
+
+
+
+
+
+
+
+
