@@ -89,3 +89,8 @@ gem 'carrierwave'
 
 gem 'rails-controller-testing'
 gem 'factory_bot_rails'
+
+gem 'thin'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem "omniauth-rails_csrf_protection"
