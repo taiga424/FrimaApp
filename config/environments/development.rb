@@ -53,7 +53,6 @@ Rails.application.configure do
   config.assets.quiet = true
 
   config.assets.precompile += ['items/*.js']
-
   config.assets.precompile += ['cable.js']
   config.assets.precompile += ['application.js']
 
