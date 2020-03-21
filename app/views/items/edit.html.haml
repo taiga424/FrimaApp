@@ -103,7 +103,7 @@
       .wrapper.brand-wrapper
         %label.wrapper__label
           ブランド：
-          = f.select :brand_id, options_for_select(@brands.map{|b| [b.name, b.id, {}]}, {prompt: "指定なし", selected: @item.brand_id}), {}, {class: "brand-wrapper__brand form-control"}
+          = f.select :brand_id, options_for_select(@brands.map{|b| [b.name, b.id, {}]}, {selected: @item.brand_id}), {prompt: "指定なし"}, class: "brand-wrapper__brand form-control"
           
       .wrapper.condition-wrapper
         %label.wrapper__label
