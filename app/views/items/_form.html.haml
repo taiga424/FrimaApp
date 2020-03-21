@@ -49,12 +49,12 @@
         #image-box.image-wrapper__image-box
           = f.fields_for :images do |i|
             .image-wrapper__image-box__js.js-file_group{data:{index: "#{i.index}"}}
-              = i.label :content, class: "image-wrapper__image-box__js__label" do
+              %label.image-wrapper__image-box__js__label
                 .image-wrapper__image-box__js__label__image.img_field{id: "img_field--#{i.index}", onClick: "$('#file').click()"}
                   - if @item.images[i.index][:content].present?
                     = image_tag asset_path(@images[i.index].content)
                   - else
-                    = image_tag 'icon_camera.png', class: "image-wrapper__image-box__js__label__image__url" 
+                    = image_tag 'icon_camera.png', class: "image-wrapper__image-box__js__label__image__url", id: "default-img" 
                 = i.file_field :content, class: "image-wrapper__image-box__js__label__file js-file"
               .js-remove
                 %span.js-remove__text
@@ -88,7 +88,7 @@
       .wrapper.brand-wrapper
         %label.wrapper__label
           ブランド：
-          = f.select :brand_id, options_for_select(@brands.map{|b| [b.name, b.id, {}]}, {prompt: "指定なし", selected: @item.brand_id}), {}, class: "brand-wrapper__brand form-control"
+          = f.select :brand_id, options_for_select(@brands.map{|b| [b.name, b.id, {}]}, {selected: @item.brand_id}), {prompt: "指定なし"}, class: "brand-wrapper__brand form-control"
           
       .wrapper.condition-wrapper
         %label.wrapper__label
