@@ -51,20 +51,25 @@
       .wrapper.image-wrapper
         #image-box.image-wrapper__image-box
           = f.fields_for :images do |i|
-            - if @item.persisted?
-              = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
-            .image-wrapper__image-box__js.js-file_group{data:{index: "#{i.index}"}}
-              = i.label :content, class: "image-wrapper__image-box__js__label" do
-                .image-wrapper__image-box__js__label__image.img_field{id: "img_field--#{i.index}", data:{image: "#{i.index}"}, onClick: "$('#file').click()"}
-                  - if @item.images[i.index][:content].present?
+            - if @item.images[i.index][:content].present?
+              - if @item.persisted?
+                = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy'
+              .image-wrapper__image-box__js.js-file_group{data:{index: "#{i.index}"}}
+                = i.label :content, class: "image-wrapper__image-box__js__label" do
+                  .image-wrapper__image-box__js__label__image.img_field{id: "img_field--#{i.index}", data:{image: "#{i.index}"}, onClick: "$('#file').click()"}
                     = image_tag asset_path(@images[i.index].content), width: "100%", height: "100%", class: "preview"
-                  - else
-                    = image_tag 'icon_camera.png', class: "image-wrapper__image-box__js__label__image__url", id: "default-img"
-                = i.file_field :content, class: "image-wrapper__image-box__js__label__file js-file"
-                
-              .js-remove{data:{remove: "#{@images[i.index].id}"}}
-                %span.js-remove__text
-                  削除
+                .js-remove{data:{remove: "#{@images[i.index].id}"}}
+                  %span.js-remove__text
+                    削除
+            - else
+              .image-wrapper__image-box__js.js-file_group{data:{index: "#{i.index}"}}
+                = i.label :content, class: "image-wrapper__image-box__js__label" do
+                  .image-wrapper__image-box__js__label__image.img_field{id: "img_field--#{i.index}", onClick: "$('#file').click()"}
+                    = image_tag 'icon_camera.png', class: "image-wrapper__image-box__js__label__image__url", id: 'default-img'
+                  = i.file_field :content, class: "image-wrapper__image-box__js__label__file js-file"
+                .js-remove
+                  %span.js-remove__text
+                    削除
 
       .wrapper.name-wrapper
         %label.wrapper__label
