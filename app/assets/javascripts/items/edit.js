@@ -88,7 +88,6 @@ $(function(){
   
   // 複数画像
   $(window).on('load', function(e){
-    console.log('OK1');
     var fileIndex = [1,2,3,4,5,6,7,8,9,10];
     var previewCount = $('.preview').length;
     lastIndex = $('.js-file_group:last').data('index');
@@ -97,7 +96,6 @@ $(function(){
 
 
     $(document).on('change', '.js-file_group input', function(e) {
-      console.log('OK2');
       $('.preview').parent().removeClass("img_field");
       var id = $('.img_field').attr('id').replace(/[^0-9]/g, '');
       var file = e.target.files[0];
@@ -107,7 +105,6 @@ $(function(){
       preview.attr({id: `img_field--${id}`});
       reader.onload = (function(file) {
         return function(e) {
-          console.log('OK3');
           preview.empty();
           preview.append($('<img>').attr({
             src: e.target.result,
@@ -141,7 +138,6 @@ $(function(){
 
 
     $('#image-box').on('change', '.js-file', function(e){
-      console.log('OK4');
       if( previewCount < 9 || $('#default-img').length == 0) {
         $('#image-box').append(buildFileField(fileIndex[0]));
         fileIndex.shift();
@@ -150,7 +146,6 @@ $(function(){
     });
 
     $('#image-box').on('click', '.js-remove', function(){
-      console.log('OK5');
       const targetIndex = $(this).parent().data('index');
       const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
       if (hiddenCheck){ 

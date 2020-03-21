@@ -49,7 +49,7 @@
         #image-box.image-wrapper__image-box
           = f.fields_for :images do |i|
             .image-wrapper__image-box__js.js-file_group{data:{index: "#{i.index}"}}
-              = i.label :content, class: "image-wrapper__image-box__js__label" do
+              %label.image-wrapper__image-box__js__label
                 .image-wrapper__image-box__js__label__image.img_field{id: "img_field--#{i.index}", onClick: "$('#file').click()"}
                   - if @item.images[i.index][:content].present?
                     = image_tag asset_path(@images[i.index].content)
