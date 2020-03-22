@@ -67,7 +67,10 @@
                   = @item.category.name
               %tr
                 %th ブランド
-                %td= @brand.name
+                -if @brand != nil
+                  %td= @brand.name
+                -else
+                  %td 指定なし
               %tr
                 %th 商品の状態
                 %td= @item.condition

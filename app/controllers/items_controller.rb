@@ -19,7 +19,9 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id: @item.id)
     @shipping_day = @item.shipping_days
     @area = @item.area
-    @brand = Brand.find(@item.brand_id)
+    if @item.brand_id?
+      @brand = Brand.find(@item.brand_id)
+    end
   end
 
   def confirm
