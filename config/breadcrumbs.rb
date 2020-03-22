@@ -22,8 +22,8 @@ crumb :item_new do
   parent :root
 end
 
-crumb :item_show do
-  link "商品の詳細", item_path(:id)
+crumb :item_show do |item|
+  link "商品の詳細", item_path(params[:id])
   parent :root
 end
 
@@ -32,7 +32,7 @@ crumb :item_confirm do
   parent :item_show
 end
 
-crumb :item_edit do
-  link "商品の編集", edit_item_path
+crumb :item_edit do |item|
+  link "商品の編集", edit_item_path(params[:id])
   parent :item_show
 end
