@@ -39,5 +39,5 @@ class Item < ApplicationRecord
 
 
   validates :name, :description, :price, :area, :condition, :fee, :shipping_days, presence: true
-  
+  validates :price, numericality: {greater_than: 299, less_than: 2000001}
 end
