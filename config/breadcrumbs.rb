@@ -17,6 +17,11 @@ crumb :card_show do
   parent :mypage
 end
 
+crumb :user_likes do
+  link "いいねした商品", likes_users_path
+  parent :mypage
+end
+
 crumb :item_new do
   link "出品ページ", new_item_path
   parent :root

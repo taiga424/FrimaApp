@@ -1,3 +1,6 @@
+= render partial: "items/header"
+- breadcrumb :user_likes
+= render "layouts/breadcrumbs"
 .container-show 
   = render "side-bar"
   .main
@@ -20,3 +23,4 @@
                 = item.price
                 円
               %i.fas.fa-chevron-right
+= render partial: "items/footer"

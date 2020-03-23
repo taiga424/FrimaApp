@@ -94,7 +94,7 @@
                   %ul
                     %li.comment
                       .comment__myname
-                        = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                        = link_to comment.user.nickname, users_path
                       .comment__mytext
                         = simple_format(comment.text)
                         .comment__mytext__time
@@ -105,10 +105,10 @@
                     %li.comment
                       -if comment.user_id == @item.user.id
                         .comment__name
-                          = link_to "#{comment.user.nickname}(出品者)", "/users/#{comment.user_id}"
+                          = "#{comment.user.nickname}(出品者)"
                       -else
                         .comment__name
-                          = link_to comment.user.nickname, "/users/#{comment.user_id}"
+                          = comment.user.nickname
                       .comment__text
                         = simple_format(comment.text)
                         .comment__text__time
