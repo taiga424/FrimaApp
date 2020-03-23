@@ -161,7 +161,6 @@ $(function(){
   $('input[type="number"]').on('focusout', function(){
     var num = $('.price-wrapper__label__price').val();
     if (num < 300 && num >= 0){
-      console.log('OK');
       if ($('#price-less').length == 0 || $('#price-more').length != 0 ){
         $('#price-more').remove();
         $('.price-wrapper').append(priceLess);

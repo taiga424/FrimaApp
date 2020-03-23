@@ -139,7 +139,7 @@
           価格：
           %span.required
             ※必須
-          = f.number_field :price, class: "price-wrapper__price form-control", required: "required"
+          = f.number_field :price, placeholder: "¥300 〜 ¥2,000,000", class: "price-wrapper__label__price form-control", required: "required"
 
       .wrapper.submit-wrapper
         = f.submit "変更して保存する", class: "btn submit-wrapper__submit-btn"
