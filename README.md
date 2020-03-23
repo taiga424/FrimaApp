@@ -28,7 +28,7 @@ Things you may want to cover:
 |------|----|-------|
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
-|password|string|null: false|
+|password|string|null: false, unique: true|
 |first_name|string|null: false|
 |last_name|string|null: false|
 |furigana_first|string|null: false|
@@ -39,6 +39,10 @@ Things you may want to cover:
 ### Association
 - has_many :items
 - has_one :address
+- has_many :sns_credentials
+- has_many :comments, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :like_items, through: :likes, source: :item
 
 
 
@@ -53,7 +57,7 @@ Things you may want to cover:
 |user_id|bigint|foreign_key: true|
 
 ### Association
-- belongs_to :user
+- belongs_to :user, optional: true
 
 
 
@@ -71,14 +75,17 @@ Things you may want to cover:
 |brand_id|bigint|foreign_key: true|
 |user_id|bigint|foreign_key: true|
 |category_id|bigint|foreign_key: true|
+|likes_count|integer||
 
 ### Association
 - belongs_to :brand, optional: true
 - belongs_to :user, optional: true
-- has_many :images, dependent: :destroy
+- has_many :comments, dependent: :destroy
 - belongs_to :category, optional: true
-
-
+- has_many :images, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :liking_users, through: :likes, source: :user
+- accepts_nested_attributes_for :images, allow_destroy: true
 
 ### brandsテーブル
 |Column|Type|Options|
@@ -105,7 +112,7 @@ Things you may want to cover:
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|content|string|null: false|
+|content|string||
 |item_id|bigint|foreign_key: true|
 
 ### Association
@@ -121,3 +128,39 @@ Things you may want to cover:
 |card_id|string|null: false|
 
 ### Association
+
+なし
+
+
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|bigint|foreign_key: true|
+|item_id|bigint|foreign_key: true|
+|text|text|null: false|
+
+### Association
+- belongs_to :item
+- belongs_to :user, optional: true
+
+
+## likesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer||
+|item_id|integer||
+
+### Association
+- belongs_to :item, counter_cache: :likes_count
+- belongs_to :user, optional: true
+
+
+## sns_credentialsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|provider|string||
+|uid|string||
+|user_id|bigint|foreign_key: true|
+
+### Association
+- belongs_to :user, optional: true

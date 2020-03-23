@@ -35,7 +35,6 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
   has_many :likes, dependent: :destroy
   has_many :liking_users, through: :likes, source: :user
-  belongs_to :category,  optional: true
 
 
   validates :name, :description, :price, :area, :condition, :fee, :shipping_days, presence: true

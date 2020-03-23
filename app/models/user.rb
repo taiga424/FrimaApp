@@ -34,7 +34,6 @@ class User < ApplicationRecord
   devise :validatable, password_length: 7..128
 
   has_one :address
-
   has_many :sns_credentials
   has_many :items
   has_many :comments, dependent: :destroy
