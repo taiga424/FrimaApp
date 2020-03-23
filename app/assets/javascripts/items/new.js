@@ -145,4 +145,39 @@ $(function(){
       };
     });
   });
+
+  //値段指定
+
+  const priceLess = function(){
+    var html = `<div class="price-wrapper__alert" id="price-less" style="float: right; color: red; margin-right: 40px;"><p>300円以上で設定してください</p></div>`
+    return html;
+  }
+
+  const priceMore = function(){
+    var html = `<div class="price-wrapper__alert" id="price-more" style="float: right; color: red; margin-right: 40px;"><p>2,000,000円以内で設定してください</p></div>`
+    return html;
+  }
+
+  $('input[type="number"]').on('focusout', function(){
+    var num = $('.price-wrapper__label__price').val();
+    if (num < 300 && num >= 0){
+      if ($('#price-less').length == 0 || $('#price-more').length != 0 ){
+        $('#price-more').remove();
+        $('.price-wrapper').append(priceLess);
+      }
+    }
+    else if (num >= 300 && num <= 2000000){
+      $('.price-wrapper__alert').remove();
+    }
+    else if (num > 2000000){
+      if ($('#price-more').length == 0 || $('#price-less').length != 0){
+        $('#price-less').remove();
+        $('.price-wrapper').append(priceMore);
+      }
+    }
+    else {
+      $('.price-wrapper__alert').remove();
+    }
+
+  })
 });

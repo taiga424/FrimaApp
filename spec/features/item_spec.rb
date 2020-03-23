@@ -5,7 +5,7 @@ feature "Item.new" do
     it "is valid with a name, description, area, condition, fee, shipping_days, brand_id, category_id, images" do
       brand = create(:brand)
       category = create(:category)
-      item = create(:item, category_id: category.id, brand_id: brand.id)
+      item = build(:item, category_id: category.id, brand_id: brand.id)
       expect(item).to be_valid
     end
 
@@ -69,8 +69,24 @@ feature "Item.new" do
       brand = create(:brand)
       category = create(:category)
       item = build(:item, price: "アイウエオ", category_id: category.id, brand_id: brand.id)
-      # item.valid?
-      expect(item).to be_valid
+      item.valid?
+      expect(item.errors[:price]).to include("is not a number")
+    end
+
+    it "is invalid with a price more than 300 yen" do
+      brand = create(:brand)
+      category = create(:category)
+      item = build(:item, price: 299, category_id: category.id, brand_id: brand.id)
+      item.valid?
+      expect(item.errors[:price]).to include("must be greater than 299")
+    end
+
+    it "is invalid with a price more than 300 yen" do
+      brand = create(:brand)
+      category = create(:category)
+      item = build(:item, price: 2000001, category_id: category.id, brand_id: brand.id)
+      item.valid?
+      expect(item.errors[:price]).to include("must be less than 2000001")
     end
   end
 end

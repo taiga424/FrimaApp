@@ -204,12 +204,16 @@
     }
 
     .price-wrapper{
-      &__price{
-
+      &__label{
+        width: 100%;
+        &__price{
+          width: 100%;
+        }
       }
     }
     .submit-wrapper{
       text-align: center;
+      margin-top: 56px;
       &__submit-btn{
         padding: 10px 40px;
         border-style: double;

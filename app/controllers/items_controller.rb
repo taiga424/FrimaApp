@@ -19,7 +19,9 @@ class ItemsController < ApplicationController
     @images = Image.where(item_id: @item.id)
     @shipping_day = @item.shipping_days
     @area = @item.area
-    @brand = Brand.find(@item.brand_id)
+    if @item.brand_id?
+      @brand = Brand.find(@item.brand_id)
+    end
   end
 
   def confirm
@@ -72,8 +74,8 @@ class ItemsController < ApplicationController
       @image = @item.images.create
       redirect_to :root
     else
-      flash.now[:alert] = '画像を１枚以上添付してください'
-      render :new
+      flash[:notice] = '画像を１枚以上添付してください'
+      redirect_to new_item_path
     end
 
   end
@@ -111,7 +113,6 @@ class ItemsController < ApplicationController
       flash.now[:alert] = '画像を１枚以上添付してください'
       redirect_to edit_item_path(@item)
     end
-
   end
 
   def destroy
