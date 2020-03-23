@@ -8,7 +8,7 @@ Item.create!(
       fee: 1,
       area: "北海道",
       shipping_days: 1,
-      purchase_id: 2,
+      purchase_id: '',
       brand_id: 1,
       user_id: 1,
       category_id: 33,

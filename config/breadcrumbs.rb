@@ -17,13 +17,18 @@ crumb :card_show do
   parent :mypage
 end
 
+crumb :user_likes do
+  link "いいねした商品", likes_users_path
+  parent :mypage
+end
+
 crumb :item_new do
   link "出品ページ", new_item_path
   parent :root
 end
 
-crumb :item_show do
-  link "商品の詳細", item_path(:id)
+crumb :item_show do |item|
+  link "商品の詳細", item_path(params[:id])
   parent :root
 end
 
@@ -32,7 +37,7 @@ crumb :item_confirm do
   parent :item_show
 end
 
-crumb :item_edit do
-  link "商品の編集", edit_item_path
+crumb :item_edit do |item|
+  link "商品の編集", edit_item_path(params[:id])
   parent :item_show
 end

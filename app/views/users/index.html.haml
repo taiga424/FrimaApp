@@ -9,11 +9,6 @@
         =@user.nickname + "さん"
     %section.main__table
       %h2.main__table__header
-        重要なお知らせ
-      %li.main__table__list
-        = link_to "住所の設定を行ってください", "#"
-    %section.main__table
-      %h2.main__table__header
         商品購入
       %ul.main__table__list
         - @items_purchase.each do |item|
