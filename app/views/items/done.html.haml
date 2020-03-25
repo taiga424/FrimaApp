@@ -8,7 +8,7 @@
             購入完了しました
           .item-info
             .item-info__wrapper
-              = image_tag asset_path(@images.first[:content])
+              = image_tag asset_path(@images.first.content)
               .item-info__wrapper__group
                 .item-info__wrapper__group__description
                   = @item.name
