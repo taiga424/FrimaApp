@@ -60,10 +60,21 @@
             .actions{
               padding-top: 20px;
               padding-bottom: 20px;
-                .submit-form {
-                  width: 200px;
-                  height: 50px;
-                }
+              .submit-form {
+                width: 200px;
+                height: 50px;
+              }
+            }
+            .facebook-btn{
+              width: 208px;
+              margin: 24px auto;
+              padding: 1rem;
+              border-radius: 16px;
+              background-color: #4f83c7;
+            }
+            .facebook-btn a{
+              text-decoration: none;
+              color: white;
             }
           }
         }       

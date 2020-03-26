@@ -69,7 +69,8 @@
             .actions
               = f.submit "Next"
             - if Rails.env.development?
-              = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post
+              .facebook-btn
+                = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post
           = render "devise/shared/links"
 = render partial: "items/footer"
 
