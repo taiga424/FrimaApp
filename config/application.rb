@@ -6,10 +6,6 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Rails.application.config.assets.paths << Rails.root.join("vendor", "original_assets", "images")
-Rails.application.config.assets.paths << Rails.root.join("vendor", "original_assets", "stylesheets")
-Rails.application.config.assets.paths << Rails.root.join("vendor", "original_assets", "javascripts")
-
 module FrimaApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
