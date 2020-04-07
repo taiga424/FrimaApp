@@ -1,10 +1,7 @@
 # README
 
 ## 本番環境
-https://github.com/taiga424/FrimaApp.git
-ID:team-d  
-Password：2222
-
+http://13.115.54.84:5000/
 
 ## usersテーブル
 |Column|Type|Options|
