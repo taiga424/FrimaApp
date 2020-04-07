@@ -1,27 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 本番環境
+https://github.com/taiga424/FrimaApp.git
+ID:team-d  
+Password：2222
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 ## usersテーブル
 |Column|Type|Options|
@@ -164,3 +147,11 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user, optional: true
+
+# Usage
+`git clone https://github.com/taiga424/FrimaApp.git`  
+`cd FrimaApp`  
+`rails db:create`  
+`rails db:migrate`  
+`rails db:seed`  
+`rails s`
